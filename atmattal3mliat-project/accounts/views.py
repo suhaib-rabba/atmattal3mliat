@@ -16,7 +16,7 @@ def signup(request):
                 auth.login(request, user)
                 return redirect('home')
         else:
-            return render(request, 'accounts/signup.html', {'error': 'Passwords must match'})
+            return render(request, 'accounts/signup.html', {'error': 'كلمة السر غير مطابقة'})
     else:
         # User wants to enter info
         return render(request, 'accounts/signup.html')
@@ -30,7 +30,7 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'accounts/login.html', {'error': 'username or password is incorrect.'})
+            return render(request, 'accounts/login.html', {'error': 'كلمة السر او اسم المستخدم غير صحيحة'})
     else:
         return render(request, 'accounts/login.html')
 

@@ -3,29 +3,28 @@
 {% block content %}
 
 {% if error %}
-{{ error }}
-<br />
-<br />
+<h4 class='container text-center lead mt-3  border p-3 border-danger'>{{ error }}</h4>
+
 {% endif %}
 
-<h1>Sign Up!</h1>
 
-<form method="POST" action="{% url 'signup' %}">
+
+<form method="POST" class='form-group container justify-content-center text-center mt-3 mb-3 lead' action="{% url 'signup' %}">
 {% csrf_token %}
-Username:
+اسم المستخدم
 <br />
-<input type="text" name="username" />
+<input class='form-control mt-1' type="text" name="username" />
 <br />
-Password:
+كلمة السر
 <br />
-<input type="password" name="password1" />
+<input class='form-control mt-1' type="password" name="password1" />
 <br />
-Confirm Password:
+تاكيد كلمة السر
 <br />
-<input type="password" name="password2" />
+<input class='form-control mt-1' type="password" name="password2" />
 <br />
-<br />
-<input class="btn btn-primary" type="submit" value="Sign Up!" />
+
+<input class="btn btn-primary" type="submit" value="تسجيل مستخدم جديد" />
 </form>
 
 {% endblock %}

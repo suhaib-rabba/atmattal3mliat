@@ -3,25 +3,24 @@
 {% block content %}
 
 {% if error %}
-{{ error }}
-<br />
-<br />
+
+ <h4 class='container text-center lead mt-3  border p-3 border-danger'>{{ error }}</h4>
+
 {% endif %}
 
-<h1>Login</h1>
+<br>
 
-<form method="POST" action="{% url 'login' %}">
+<form class='form-group container justify-content-center text-center mt-3 mb-3 lead' method="POST" action="{% url 'login' %}">
 {% csrf_token %}
-Username:
+اسم المستخدم
 <br />
-<input type="text" name="username" />
+<input class=" mt-1 form-control" type="text" name="username" />
 <br />
-Password:
+<span class='m-auto text-center'>كلمة السر</span>
 <br />
-<input type="password" name="password" />
+<input class='form-control mt-1' type="password" name="password" />
 <br />
-<br />
-<input class="btn btn-primary" type="submit" value="Login" />
+<input class="btn btn-primary" type="submit" value="ادخل" />
 </form>
 
 {% endblock %}

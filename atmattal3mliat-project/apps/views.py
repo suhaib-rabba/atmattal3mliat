@@ -6,3 +6,8 @@ from django.shortcuts import render
 def home(request):
     context = {}
     return render(request, 'apps/home.html', context)
+
+
+def about(request):
+    context = {}
+    return render(request, 'general/about.html', context)
