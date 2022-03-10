@@ -11,3 +11,7 @@ def home(request):
 def about(request):
     context = {}
     return render(request, 'general/about.html', context)
+
+
+def contact(request):
+    return render(request, 'general/contact.html')
