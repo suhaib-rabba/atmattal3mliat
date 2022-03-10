@@ -1,0 +1,78 @@
+h1{text-align: center;
+font-family: 'Amiri', serif;
+padding-top: 30px;
+width: 350px;}
+#suhaib2{text-align: center;
+align-items: center;
+width: 350px;
+}
+
+#mainLogo{width: 15%;
+height: 15%;}
+.mainTitle{
+  margin-right:30%;
+}
+.mainTitle{width: 300px}
+header{display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+border: solid 2px black;
+}
+
+form{
+display: block;
+text-align: center;
+
+}
+
+#citizenName{
+  height: 30px;
+  text-align: center;
+  width: 50%;
+  font-size: 25px;
+  border-radius: 15px;
+}
+#columnNubmer{
+  height: 30px;
+  text-align: center;
+  width: 50%;
+  font-size: 25px;
+  border-radius: 15px;
+}
+#columnLabel{
+  height: 30px;
+  text-align: center;
+  width: 50%;
+  font-size: 25px;
+  border-radius: 15px;
+}
+#type{
+  height: 40px;
+  text-align: center;
+  width: 50%;
+  font-size: 25px;
+  border-radius: 15px;
+  text-indent: calc(57% - 70px);
+  border-radius: 15px;
+}
+.buttom{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 150px;
+  height: 70px;
+  background: white;
+  font-family: 'Amiri', serif;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 100%;
+  border-color: green;
+  border-width: medium;
+}
+#wordFile{
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  margin: center;
+
+}

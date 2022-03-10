@@ -1,0 +1,22 @@
+/* header{display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ border: solid 2px black;
+ border-radius: 50px;
+}
+#mainLogo{width: 10%;
+height: 10%;}
+
+#suhaib2{text-align: center;
+align-items: center;
+font-family: 'Amiri', serif;
+padding-left: 300px;
+}
+
+li{
+  list-style-type: none;
+}
+.two_column{
+  display: flex;
+  flex-direction: row;
+} */
