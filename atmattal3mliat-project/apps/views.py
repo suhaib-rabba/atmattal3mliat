@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from .models import Applications
+from .functions.tender_study_phase import Tender
 
 # Create your views here.
 
 
 def home(request):
-    context = {}
+    applications = Applications.objects
+    context = {'applications': applications}
     return render(request, 'apps/home.html', context)
 
 
@@ -15,3 +18,21 @@ def about(request):
 
 def contact(request):
     return render(request, 'general/contact.html')
+
+    #------------------------------------
+
+
+def diesel_view(request):
+    return render(request, 'apps/diesel_asphalt.html')
+
+
+def tender_study_view(request):
+    if request.method == "POST":
+       cost = request.POST.get('cost')
+       period = request.POST.get('period')
+       object = Tender(cost, period)
+
+       context = {"object": object}
+       return render(request, 'apps/tender_study_phase.html', context)
+    else:
+       return render(request, 'apps/tender_study_phase.html', {})

@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+
+
+<h2 class='text-center'>تطبيق تحضير قيم العطاء</h2>
+<br>
+
+<div class="justify-content-center text-center">
+
+
+<form  action="{% url 'tender_study_phase' %}"  method="post"> {% csrf_token %}
+
+
+  <label for="">
+  <input type="number"  class='firstDate' name='cost'  min='1'  required>
+قيمة العطاء </label>
+
+  <label for="">
+  <input type="number" class='firstDate2' name='period' min='1'  required>
+مدة العطاء بالاشهر </label>
+<br>
+<br>
+
+<input class="btn btn-success  " id='submitFirst' type='submit' value='احسب قيم العطاء' >
+
+</form>
+</div>
+
+{{object.ald5ol.0}}
+{{object.ald5ol.1}}
+
+{{object.ald5ol.2}}
+{{object.ald5ol.3}}
+
+
+
+{% endblock %}
