@@ -4,36 +4,129 @@
 
 
 
-<h2 class='text-center'>تطبيق تحضير قيم العطاء</h2>
+<h4 class='text-center text-success'>تطبيق تحضير قيم العطاء</h4>
 <br>
 
-<div class="justify-content-center text-center">
 
 
-<form  action="{% url 'tender_study_phase' %}"  method="post"> {% csrf_token %}
 
 
-  <label for="">
-  <input type="number"  class='firstDate' name='cost'  min='1'  required>
-قيمة العطاء </label>
+<form class="form-inline container text-center" action="{% url 'tender_study_phase' %}"  method="post"> {% csrf_token %}
+    <input class="form-control mr-2 " type="text" min='1'  id="username" name='cost' placeholder="كلفة المشروع">
+    <br>
 
-  <label for="">
-  <input type="number" class='firstDate2' name='period' min='1'  required>
-مدة العطاء بالاشهر </label>
+    <input class="form-control mr-2" type="text" min='1' id="password" name='period' placeholder="الفترة بالاشهر">
+
 <br>
-<br>
-
-<input class="btn btn-success  " id='submitFirst' type='submit' value='احسب قيم العطاء' >
-
+    <button class="btn btn-success btn-bg " type="submit">ادخل</button>
 </form>
+
+<br>
+
+{% if request.method == 'POST' %}
+   ...
+
+<table class="table table-sm table-hover table-striped container text-center ">
+    <thead>
+        <tr class='text-success'>
+            <th>النسبة</th>
+            <th>كلفة الدخول(بالدينار)</th>
+            <th>غرامة التاخير(دينار/يوم)</th>
+            <th>الحد الادنى للمطالبة (بالدينار)</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th class='text-success' scope="row">1%</th>
+            <td>{{object.ald5ol.0}}</td>
+            <td>{{object.alta5ier}}</td>
+            <td>{{object.minumumPayment}}</td>
+
+
+        </tr>
+        <tr>
+            <th class='text-success'  scope="row">1.5%</th>
+            <td>{{object.ald5ol.1}}</td>
+
+        </tr>
+        <tr>
+            <th class='text-success' scope="row">2%</th>
+            <td>{{object.ald5ol.2}}</td>
+
+        </tr>
+        <tr>
+            <th class='text-success' scope="row">2.5%</th>
+            <td>{{object.ald5ol.3}}</td>
+
+        </tr>
+        <tr>
+            <th class='text-success' scope="row">3%</th>
+            <td>{{object.ald5ol.4}}</td>
+
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+
+
+<br>
+<div   dir="rtl">
+  <h5 class= 'text-center  '>تطبيق تحضير قيم العطاء</h5>
+
+  <table class="table table-sm table-hover  container text-center ">
+      <thead>
+          <tr >
+              <th>#</th>
+              <th>الاسم</th>
+              <th>المسمى</th>
+              <th>المساهمة</th>
+
+
+
+          </tr>
+      </thead>
+      <tbody>
+          <tr class='table-success'>
+              <th  scope="row">1</th>
+              <td >م.صهيب زهير خليل رباع</td>
+              <td>مهندس طرق</td>
+              <td>اعداد وتصميم</td>
+
+
+          </tr>
+          <tr class="table-secondary">
+              <th   scope="row">2</th>
+              <td>م.رحاب  حسن السعدوني</td>
+              <td>رئيس قسم المساحة والدراسات</td>
+              <td>مدقق اول</td>
+
+
+          </tr>
+          <tr class="table-secondary">
+              <th  scope="row"3>3</th>
+              <td>م.مها زيادين</td>
+              <td>رئيس قسم تنفيذ الطرق</td>
+              <td>مدقق ثاني</td>
+
+
+          </tr>
+          <tr class="table-secondary">
+              <th  scope="row">4</th>
+              <td>م.احمد الزن</td>
+              <td>مهندس طرق</td>
+              <td>مدقق ثالث</td>
+
+
+
+          </tr>
+
+      </tbody>
+  </table>
 </div>
-
-{{object.ald5ol.0}}
-{{object.ald5ol.1}}
-
-{{object.ald5ol.2}}
-{{object.ald5ol.3}}
-
 
 
 {% endblock %}
