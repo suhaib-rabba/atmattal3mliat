@@ -1,9 +1,57 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1 class='text-center' >
-تطبيق الديزل
-</h1>
+<h2 id='dieselApp_title' class='firstDate text-center'>تطبيق تعاميم المحروقات</h2>
+
+<br>
+<form  class='text-center' id="tenderApp_form" action="{% url 'diesel_asphalt' %}"  method="post"> {% csrf_token %}
+
+
+  <label for="">
+  <input type="number"  class='firstDate' name='month'  min='1'  max='12' required>
+الشهر</label>
+
+  <label for="">
+  <input  type="number"  lass='firstDate2' name='year' min='2019' max=2021  required>
+ السنة</label>
+
+
+<br>
+<br>
+<h3>:اختر  من الخيارات ادناه</h3>
+<br>
+<div class="hiddenradio">
+<label>
+  <input type="radio" name="test" value="diesel" checked>
+  <img src="{% static "images\diesel.jpg" %}">
+</label>
+<label>
+  <input type="radio" name="test" value="bitumen" checked>
+  <img src="{% static "images\asphalt.jpg" %}">
+</label>
+
+<label>
+  <input type="radio" name="test" value="fuel" checked>
+  <img src="{% static "images\fuel.jpg" %}">
+</label>
+
+
+
+<br>
+<br>
+
+<input class="btn btn-success  " id='submitFirst' type='submit' value='قيمة التعميم' >
+
+<br>
+<br>
+
+<h3>{{costRequest.1}}</h3>
+<h3>{{costRequest.0}}</h3>
+
+
+
+
+
 
 {% endblock %}

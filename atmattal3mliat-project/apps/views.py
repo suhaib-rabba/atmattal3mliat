@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Applications
 from .functions.tender_study_phase import Tender
+from .functions.diesel_asphalt import Tamem
 
 # Create your views here.
 
@@ -23,7 +24,19 @@ def contact(request):
 
 
 def diesel_view(request):
-    return render(request, 'apps/diesel_asphalt.html')
+    if request.method == "POST":
+       year=request.POST.get('year')
+       month=request.POST.get('month')
+       test=request.POST.get('test')
+       object=tamem(year,month)
+
+       costRequest = getattr(object, test)
+
+       context={"object":object,
+        "costRequest":costRequest}
+       return render(request,"apps/diesel_asphalt.html",context)
+    else:
+       return render(request,"apps/diesel_asphalt.html",{})
 
 
 def tender_study_view(request):
