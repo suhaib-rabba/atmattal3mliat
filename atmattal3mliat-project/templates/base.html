@@ -37,9 +37,13 @@
 
 
     <div class="d-flex justify-content-between row-hl">
-      <div class="p-4 item-hl"><img  class="img-fluid" alt="Responsive image"  src="{% static 'one-digital-gov_200.png' %}" hight=50 width=120 alt=""  ></div>
-      <div  class="p-4 item-hl h4  mt-5" style="font-family:'Calibri, sans-serif';">  تنفيذ المهمات الوظيفية بسرعة وكفاءة </div>
-      <div class="p-4 item-hl"><img  class="img-fluid" alt="Responsive image"  src="{% static 'one-digital-gov_200.png' %}"  hight=50 width=120 alt=""  ></div>
+      <div class="p-4 item-hl"><img  class="img-fluid" alt="Responsive image"  src="{% static 'one-digital-gov_200.png' %}" hight=50 width=150 alt=""  ></div>
+      <div  class="  h4  my-auto   " style="font-family:'Calibri, sans-serif';">
+
+مبادرة لتخفيف وطئة الاعمال البيوقراطية بالمؤسسات الحكومية
+
+       </div>
+      <div class="p-4 item-hl"><img  class="img-fluid" alt="Responsive image"  src="{% static 'one-digital-gov_200.png' %}"  hight=50 width=150 alt=""  ></div>
     </div>
 
       <nav class="navbar navbar-expand-lg navbar-dark   " style="background-color:#27a800; color:white">
@@ -51,33 +55,57 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav   ">
+        {% if request.get_full_path == "/contact/" %}
+
         <li class="nav-item">
-          <a class="nav-link border  mx-1 " aria-current="page" href="{% url 'contact' %}">اتصل بنا</a>
+          <a class="nav-link active   mx-1 " aria-current="page" href="{% url 'contact' %}">اتصل بنا</a>
         </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link   mx-1 " aria-current="page" href="{% url 'contact' %}">اتصل بنا</a>
+        </li>
+        {% endif %}
+
+        {% if request.get_full_path == "/about/" %}
         <li class="nav-item ">
-          <a class="nav-link border   mx-1 " href="{% url 'about' %}"> حول الموقع </a>
+          <a class="nav-link  active   mx-1 " href="{% url 'about' %}"> حول الموقع </a>
         </li>
+{% else %}
+<li class="nav-item ">
+  <a class="nav-link    mx-1 " href="{% url 'about' %}"> حول الموقع </a>
+</li>
+{% endif %}
+
+
+
 
         {% if user.is_authenticated %}
 
       <li  class='nav-item'>
-        <a class=" nav-link border " href="javascript:{document.getElementById('logout').submit()}" onclick="">تسجيل خروج</a>
+        <a class=" nav-link   " href="javascript:{document.getElementById('logout').submit()}" onclick="">تسجيل خروج</a>
         </li>
         <form id="logout" method="POST" action="{% url 'logout' %}">
         {% csrf_token %}
           <input type="hidden" />
         </form>
         {% else %}
+
+        {% if request.get_full_path == "/accounts/signup" %}
         <li class="nav-item">
-        <a class=" nav-link border  mx-1" href="{% url 'signup' %}"> تسجيل مستخدم جديد </a>
+        <a class=" nav-link active   mx-1" href="{% url 'signup' %}"> تسجيل مستخدم جديد </a>
         </li>
+        {% else %}
+        <li class="nav-item">
+        <a class=" nav-link   mx-1" href="{% url 'signup' %}"> تسجيل مستخدم جديد </a>
+        </li>
+        {% endif %}
         {% if request.get_full_path == "/accounts/login" %}
         <li class='nav-item'>
-        <a class=" nav-link active border  border-rouded px-5  mx-1 " href="{% url 'login' %}"> دخول </a>
+        <a class=" nav-link active   mx-1 " href="{% url 'login' %}"> دخول </a>
         </li>
         {% else %}
         <li class='nav-item'>
-        <a class=" nav-link  mx-1 border rounded-circle  " href="{% url 'login' %}"> دخول </a>
+        <a class=" nav-link  mx-1  " href="{% url 'login' %}"> دخول </a>
         </li>
         {% endif %}
 
