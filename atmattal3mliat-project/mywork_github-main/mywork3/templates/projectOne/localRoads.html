@@ -1,0 +1,109 @@
+{% load static %}
+{% load bootstrap4 %}
+{% load bootstrap_icons %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href='{% static 'localRaodsView.css' %}?{% now "U" %}'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <header>
+      <div class='mainTitle'>
+    <h1>قاعدة بيانات قسم الطرق الزراعية  </h1>
+    <h4 id="suhaib2" >برنامج استعراض المعاملات</h4>
+    </div>
+    <img id='mainLogo' src="{% static 'MPWH+Logo.jpg' %} " alt="">
+</header>
+
+<a href="{% url 'index' %}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left-circle arrow" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+</svg></a>
+
+
+<form action="{% url 'localRoadsRender' %}"  method="post"> {% csrf_token %}
+
+  <input class="btn btn-success "  type='submit' value='ادخل اسم المواطن' >
+  <br>
+    <input type="text" id='citizen-name' name='citizenName'>
+    </form>
+<br>
+ <div id='transver'>{{trail|safe }}</div>
+
+    <table>
+      <tr>
+
+        <td id='info'> {{objects.report}}</td>
+        <td id='item'>تقرير مساح مرخص</td>
+
+        <td  id='info'>{{objects.requestDate}}</td>
+        <td id='item'>تاريخ تقديم الطلب</td>
+
+        <td  id='info'>{{objects.requestNumber}}</td>
+        <td id='item'> رقم الطلب </td>
+
+
+        <td  id='info'>{{objects.citizenName}}</td>
+        <td id='item'>اسم المواطن</td>
+
+
+      </tr>
+      <tr>
+
+        <td  id='landNumber'>{{objects.landNumber}}</td>
+        <td id='item'>قطعة الارض</td>
+
+        <td  id='basinNumber'>{{objects.basinNumber}}</td>
+        <td id='item'>رقم الحوض </td>
+
+        <td  id='basinNam'>{{objects.basinName}}</td>
+        <td id='item'> اسم الحوض</td>
+
+        <td  id='info'> {{objects.village}}</td>
+        <td id='item'>القرية</td>
+      </tr>
+      <tr>
+
+      <td  id='info'>{{objects.tendiring}}</td>
+      <td id='item'>العطاءات</td>
+
+      <td  id='info'>{{objects.service}}</td>
+      <td id='item'>الخدمة</td>
+
+    <td  id='info'>{{objects.heavyEquipment}}</td>
+    <td id='item'>الاليات</td>
+
+    <td  id='info'>{{objects.currentLayer}}</td>
+    <td id='item'>االوضع الحالي</td>
+
+      </tr>
+
+      <tr>
+
+
+
+
+
+
+    <td  id='info'> <a href="{{survey_report}}" download>{{respond_survey}}</td>
+    <td id='item'>تقرير مساح مرخص  </td>
+
+    <td  id='info'> <a href="{{land_chart}}" download>{{respond_land}}</td>
+    <td id='item'>مخطط اراضي </td>
+
+      </tr>
+
+    </table>
+
+
+    {{objects.citiznName}}
+
+
+  </body>
+</html>

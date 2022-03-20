@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'trail.css' %}" >
+    <!-- <link rel="stylesheet" href="{% static 'Tamem.css' %}" > -->
+    <link rel="stylesheet" type="text/css" href='{% static 'Tamem.css' %}?{% now "U" %}'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Markazi+Text:wght@500&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+<header>
+<div id='mainContent'>
+  <h1 class='text-center'>مشروع اتمتة العمليات الحكومية</h1>
+  <h3 id='suhaib2' class='text-center'>الاحواض داخل الحد الاداري </h3>
+</div>
+  <img id='mainLogo'  src="{% static 'MPWH+Logo.jpg' %} " alt="">
+
+    </header>
+    <a href="{% url 'index' %}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left-circle arrow" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+    </svg></a>
+<br>
+
+<div class="row ">
+
+  <div class="col-xl-3 col-sm-4  ">
+    <h3>الفيحاء</h3>
+    <ul>
+      <li>الجازل (1)</li>
+      <li>المسيج (3)</li>
+      <li> المصلوبة (4)</li>
+
+    </ul>
+  </div>
+  <div class="col-xl-3 col-sm-4 ">
+    <h3 id='madaba'>مادبا</h3>
+    <ul>
+      <li>الدخاخين الجنوبي (6)</li>
+      <li> ابو اليتامى (4)</li>
+      <li>التيم الشرقي (5)</li>
+
+    </ul>
+  </div>
+  <div class="col-xl-3 col-sm-4 ">
+    <h3 id='waha'>الواحة</h3>
+  <ul>
+  <li>سدر ام الزعارير (1)</li>
+  <li>(3)حنو البطان</li>
+  <li>المريجمة(4)</li>
+  </ul>
+  </div>
+  <div class="col-xl-3 col-sm-4 ">
+    <h3 id='herbah'>خربة الهلالية</h3>
+  <ul>
+  <li>صهاة ابن عمر (1)</li>
+  <li>السلطاني(2)</li>
+  <li>حوية الفقراء (3)</li>
+  </ul>
+  </div>
+
+  <div class="col-xl-3 col-sm-4">
+    <h3>جرينة</h3>
+<ul>
+  <li>جرينة الشرقي (1)</li>
+  <li>الوسية(3)</li>
+  <li>جرينة الغربي (4)</li>
+  <li>غرناطة(5)</li>
+  <li>صراره(6)</li>
+  <li>ابو النمل (7)</li>
+  <li>ام الكسبره (9)</li>
+</ul>
+</div>
+
+
+
+
+<div class="col-xl-3 col-sm-4 ">
+  <h3 id='fasalia'>الفيصلية</h3>
+  <ul>
+    <li>(1)اللبه</li>
+    <li>الكفير الشرقي (3)</li>
+    <li>(5)يسرا</li>
+    <li>(6)المنحلة</li>
+    <li>(7)القويجية</li>
+    <li>(8)التركمانية</li>
+    <li>(9)الجازل</li>
+    <li>(11)بنا</li>
+    <li>(15)صياغة الشرقي</li>
+    <li>(20)تليعات الصفي </li>
+
+  </ul>
+</div>
+
+<div class="col-xl-3 col-sm-4 maenMain">
+
+  <h3 id='maen'>ماعين</h3>
+<div class="two_column">
+  <div class="columnOne">
+  <li>نايفان جسور دغيمان (11)</li>
+  <li>حليسات ابيض وجه(12)</li>
+  <li>الهلاهلة (13)</li>
+  <li>بشارية ابو العديس(15)</li>
+  <li>حنو بطان نايفة (16)</li>
+  <li>ملوحيات مبنى الخيام (17)</li>
+  <li>عطل الهريج (18)</li>
+  <li>الدير (20)</li>
+  <li>ارفيعية ام الشوامر (30)</li>
+  </div>
+<div class="columnTwo">
+<li>حنو سنينة المغارة (1)</li>
+<li>عصايب حنو مورد (2)</li>
+<li>عوج ابو ساري (3)</li>
+<li>الكريك (4)</li>
+<li>عويسة ابو الظهور (5)</li>
+<li>مشرفة المرعاوي (6)</li>
+<li>ام زعيريوه (7)</li>
+<li>المشرفة (8)</li>
+<li>معقر الهيجة (9)</li>
+</div>
+
+
+</div>
+
+
+
+</div>
+<div class="col-xl-3 col-sm-4 ">
+  <h3 id='lb'>اراضي لب </h3>
+<ul>
+<li id='tall'> حوض مقلع الخزنة (1) كامل القطعة رقم(1)</li>
+</ul>
+</div>
+</div>
+</table>
+
+
+</html>

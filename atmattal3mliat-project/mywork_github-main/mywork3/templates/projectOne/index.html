@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Markazi+Text:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href='{% static 'trail.css' %}?{% now "U" %}'>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <style>
+  </style>
+  <body class='container-fluid'>
+
+<br>
+
+  <div id='top_border2'>
+    <hr>
+
+    <header>
+
+
+    <div>
+    <h1>مشروع اتمتة العمليات الحكومية </h1>
+    <h4 id="suhaib2" >مبادرة لتخفيف وطئة الاعمال البيوقراطية بالمؤسسات الحكومية</h4>
+    </div>
+    <img id='mainLogo' src="{% static 'MPWH+Logo.png' %} " alt="">
+    <br>
+  </header>
+<hr id='header_line2'>
+  <ul class="nav justify-content-end container">
+    <li class="nav-item">
+        <a class="nav-link navBar" href="#">عن الموقع</a>
+
+    </li>
+  <li class="nav-item">
+      <a class="nav-link navBar" href="#">التعاميم</a>
+
+  </li>
+  <li class="nav-item">
+
+    <a  href="{% url 'webApp' %}"  class="nav-link active navBar ">واحة التطبيقات </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active navBar "  href="{% url 'index' %}" >الصفحة الرئيسية </a>
+  </li>
+</ul>
+<hr id='header_line2'>
+    </div>
+<br>
+
+
+<section id='departmnets' class='row  ' >
+
+
+<div class="localRoads col-xl-4 col-sm-6">
+    <h2 class='departmnetsTitle' >قسم الطرق الزراعية</h2>
+    <ul class='departmnetsStyle'>
+      <li ><a href="{% url 'localRoadsDataBase' %}">مركز ادخال البيانات</a></li>
+      <li ><a href="{% url 'localRoadsRender' %}">المعاملات</a> </li>
+      <li ><a href="{% url 'columnRemoval' %}">مخاطبات - اتصالات و كهرباء</a></li>
+      <li><a href="{% url 'cost_estimations' %}">مخاطبات - سيل كوت</li>
+      <li><a ><a href="{% url 'widthRequest' %}">مخاطبات - رفع سعة</a></a></li>
+      <li><a ><a href="{% url 'offensive' %}">مخاطبات ازالة اعتداء</a></a></li>
+      <li><a ><a href="{% url 'localRoadsScope' %}">الاحواض ضمن الحد الاداري </a></a></li>
+
+    </ul>
+</div>
+<div class="maintenance col-xl-4 col-sm-6 ">
+  <h2 class='departmnetsTitle'>قسم الصيانة</h2>
+</div>
+<div class="lab  col-xl-4 col-sm-6">
+    <h2 class='departmnetsTitle'>قسم المختبر</h2>
+</div>
+<div class="survey   col-xl-4 col-sm-6">
+    <h2 class='departmnetsTitle'>قسم المساحة</h2>
+</div>
+<div class="trafficStudies   col-xl-4 col-sm-6">
+    <h2 class='departmnetsTitle'>قسم الدراسات المرورية</h2>
+</div>
+<div class="Tendering  col-xl-4 col-sm-6">
+    <h2 class='departmnetsTitle'>قسم العطاءات</h2>
+</div
+
+</section>
+
+<h4 id="suhaib" class='text-right'>منشأ البرنامج: صهيب زهير خليل رباع</h4>
+  </body>
+
+</html>
