@@ -25,18 +25,37 @@ def contact(request):
 
 def diesel_view(request):
     if request.method == "POST":
-       year=request.POST.get('year')
-       month=request.POST.get('month')
-       test=request.POST.get('test')
-       object=tamem(year,month)
+        #الاساسي
+       year1 = request.POST.get('year1')
+       month1 = request.POST.get('month1')
+       #التنفيذ
+      year2 = request.POST.get('year2')
+      month2 = request.POST.get('month2')
 
-       costRequest = getattr(object, test)
 
-       context={"object":object,
-        "costRequest":costRequest}
-       return render(request,"apps/diesel_asphalt.html",context)
+       test = request.POST.get('item')
+
+       object1 = Tamem(year1, month1)
+       object2 = Tamem(year2, month2)
+       if test=='diesel':
+           costRequest_basic_diesel=object1.diesel()
+           costRequest_final_diesel=object2.diesel()
+       else:
+
+
+
+
+
+       costRequest1 = getattr(object1, test)
+       costRequest2_ = getattr(object2, test)
+
+
+
+       context = {"object": object,
+                  "costRequest": costRequest}
+       return render(request, "apps/diesel_asphalt.html", context)
     else:
-       return render(request,"apps/diesel_asphalt.html",{})
+       return render(request, "apps/diesel_asphalt.html", {})
 
 
 def tender_study_view(request):
