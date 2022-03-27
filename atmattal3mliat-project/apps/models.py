@@ -27,3 +27,14 @@ class Applications(models.Model):
 
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')
+
+
+class Combustibles(models.Model):
+    title = models.CharField(max_length=255)
+    tamem_2019 = models.FileField(upload_to='combustibles/diesel/')
+    tamem_2020 = models.FileField(upload_to='combustibles/diesel/')
+    tamem_2021 = models.FileField(upload_to='combustibles/diesel/')
+    tamem_2022 = models.FileField(upload_to='combustibles/diesel/')
+
+    def __str__(self):
+        return self.title

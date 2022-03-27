@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import Applications
 from .functions.tender_study_phase import Tender
 from .functions.diesel_asphalt import Tamem
+from .models import Combustibles
+from .functions.combustiblesFucntion import tamem_diesel_year
+
 
 # Create your views here.
 
@@ -40,10 +43,23 @@ def diesel_view(request):
        if test == "diesel":
            costRequest_basic_diesel = object1.diesel()
            costRequest_final_diesel = object2.diesel()
+           diesel_tamem = Combustibles.objects.get(id=1)
+           # tamem_base = tamem_diesel_year(year1, diesel_tamem)
+           # tamem_final = tamem_diesel_year(year2, diesel_tamem)
+          #
+           call_base = "tamem_"+str(year1)
+           call_final = "tamem_"+str(year2)
+           tamem_base = getattr(diesel_tamem, call_base)
+           tamem_final = getattr(diesel_tamem, call_final)
+        #   tamem_base = diesel_tamem.tamem_2019
+          # tamem_final = diesel_tamem.tamem_2020
+
            context = {"object": object,
                       "costRequest_basic_diesel": costRequest_basic_diesel,
                       "costRequest_final_diesel":  costRequest_final_diesel,
-                      "test": test
+                      "test": test,
+                      "tamem_base": tamem_base,
+                      "tamem_final": tamem_final
                       }
            return render(request, "apps/diesel_asphalt.html", context)
 
@@ -51,13 +67,21 @@ def diesel_view(request):
            costRequest_basic_bitumen = object1.bitumen()
            costRequest_final_bitumen = object2.bitumen()
            costRequest_basic_fuel = object1.fuel()
-           costRequest_final_fuel = object2.fuel()
+           costRequest_final_fuel = object2.fuel
+           butimen_oil_tamem = Combustibles.objects.get(title="butiment_fuel")
+           call_base = "tamem_"+str(year1)
+           call_final = "tamem_"+str(year2)
+           tamem_base = getattr(butimen_oil_tamem, call_base)
+           tamem_final = getattr(butimen_oil_tamem, call_final)
+
            context = {"object": object,
                       "costRequest_basic_bitumen": costRequest_basic_bitumen,
                       "costRequest_final_bitumen":  costRequest_final_bitumen,
                       "costRequest_basic_fuel": costRequest_basic_fuel,
                       "costRequest_final_fuel": costRequest_final_fuel,
-                      "test": test
+                      "test": test,
+                      "tamem_base": tamem_base,
+                      "tamem_final": tamem_final
                       }
            return render(request, "apps/diesel_asphalt.html", context)
 

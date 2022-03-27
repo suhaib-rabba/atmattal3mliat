@@ -62,7 +62,11 @@
               <th>#</th>
               <td >الصنف</td>
               <td>السعر وقت التاريخ الاساسي(فلس)</td>
+              <td>التعميم (التاريخ الاساسي)</td>
               <td>السعر وقت التاريخ الفعلي (فلس)</td>
+              <td>التعميم (التاريخ الفعلي)</td>
+
+
 
 
 
@@ -76,16 +80,17 @@
             <th  scope="row">1</th>
             <td >ديزل</td>
             <td>{{costRequest_basic_diesel.0}}</td>
+            <td><a href={{tamem_base.url}} download="ديزل">pdf</a></td>
             <td>{{costRequest_final_diesel.0}}</td>
-
+            <td><a href={{tamem_final.url}} download="ديزل">pdf</a></td>
 
 
           </tr>
 
 
-
       </tbody>
   </table>
+
 </div>
 
 {% elif  test == 'butimen_oil' %}
@@ -98,8 +103,11 @@
           <tr >
               <th>#</th>
               <td >الصنف</td>
-              <td>السعر وقت التاريخ الاساسي(فلس)</td>
-              <td>السعر وقت التاريخ الفعلي (فلس)</td>
+              <td>السعر وقت التاريخ الاساسي(طن/دينار)</td>
+              <td>التعميم (التاريخ الاساسي)</td>
+              <td>السعر وقت التاريخ الفعلي(طن/دينار)</td>
+              <td>التعميم (التاريخ الفعلي)</td>
+
 
 
 
@@ -112,7 +120,9 @@
               <th  scope="row">1</th>
               <td >بيتيومين</td>
               <td>{{costRequest_basic_bitumen.0}}</td>
+              <td><a href={{tamem_base.url}} download="بيتيومين و فيول">pdf</a></td>
               <td>{{costRequest_final_bitumen.0}}</td>
+              <td><a href={{tamem_final.url}} download="بيتيومين و فيول">pdf</a></td>
 
 
 
@@ -123,7 +133,9 @@
               <th   scope="row">2</th>
               <td>زيت وقود</td>
               <td>{{costRequest_basic_fuel.0}}</td>
+              <td>---</td>
               <td>{{costRequest_final_fuel.0}}</td>
+              <td>---</td>
 
 
           </tr>
