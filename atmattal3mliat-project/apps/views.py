@@ -38,15 +38,8 @@ def diesel_view(request):
        object2 = Tamem(year2, month2)
 
        if test == "diesel":
-           try:
-               costRequest_basic_diesel = object1.diesel()
-               costRequest_final_diesel = object2.diesel()
-           except:
-               costRequest_basic_diesel = [
-                   "القيمة غير موجودة في قاعدة البيانات", "القيمة غير موجودة في قاعدة البيانات"]
-               costRequest_final_diesel = [
-                   "القيمة غير موجودة في قاعدة البيانات", "القيمة غير موجودة في قاعدة البيانات"]
-
+           costRequest_basic_diesel = object1.diesel()
+           costRequest_final_diesel = object2.diesel()
            context = {"object": object,
                       "costRequest_basic_diesel": costRequest_basic_diesel,
                       "costRequest_final_diesel":  costRequest_final_diesel,

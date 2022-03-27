@@ -25,9 +25,9 @@
       <hr class='w-75 mx-auto '>
 
       <div class="col-7">
-        <input class="form-control  mr-2" type="number" min=2019 max=2022 id="username" name='year2' placeholder="السنة">  </div>
+        <input class="form-control  mr-2" type="number" min=2019 max=2022 id="username" name='year2' placeholder="السنة" required>  </div>
         <div class="col-5">
-          <input class="form-control  mr-2" type="number" min=1 max=12  id="password" name='month2' placeholder="الشهر">  </div>
+          <input class="form-control  mr-2" type="number" min=1 max=12  id="password" name='month2' placeholder="الشهر" required>  </div>
 
 
 
@@ -37,12 +37,12 @@
 <div   dir="rtl">
           <div  class="form-check    pull-right">
 
-            <input class=" pull-right" type="radio" value="diesel" name='item' id="flexCheckDefault">
+            <input class=" pull-right" type="radio" value="diesel" name='item' id="flexCheckDefault" required>
             <label class="form-check-label lead  " for="flexCheckDefault">
       ديزل</label>
                </div>
             <div class="form-check  mt-2">
-            <input class="pull-right" type="radio" value="butimen_oil" name='item' id="flexCheckChecked" checked>
+            <input class="pull-right" type="radio" value="butimen_oil" name='item' id="flexCheckChecked" checked required>
             <label class="form-check-label lead" for="flexCheckChecked">
 بيتيومين و زيت وقود            </label>
           </div>
@@ -75,8 +75,8 @@
         <tr class=''>
             <th  scope="row">1</th>
             <td >ديزل</td>
-            <td>{{costRequest_basic_diesel.1}}</td>
-            <td>{{costRequest_final_diesel.1}}</td>
+            <td>{{costRequest_basic_diesel.0}}</td>
+            <td>{{costRequest_final_diesel.0}}</td>
 
 
 
