@@ -4,7 +4,8 @@ from .functions.tender_study_phase import Tender
 from .functions.diesel_asphalt import Tamem
 from .models import Combustibles
 from .functions.combustiblesFucntion import tamem_diesel_year
-
+from .functions.dateFunction import dateDifference
+from .functions.dateFunction import dateText
 
 # Create your views here.
 
@@ -102,3 +103,41 @@ def tender_study_view(request):
        return render(request, 'apps/tender_study_phase.html', context)
     else:
        return render(request, 'apps/tender_study_phase.html', {})
+#---------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------
+
+
+def tender_date(request):
+    if request.method == "POST":
+        #------     امر المباشرة ------
+        year1 = int(request.POST.get('year1'))
+        month1 = int(request.POST.get('month1'))
+        day1 = int(request.POST.get('day1'))
+       #------     تاريخ انهاء الاعمال ------
+        year2 = int(request.POST.get('year2'))
+        month2 = int(request.POST.get('month2'))
+        day2 = int(request.POST.get('day2'))
+
+        tenderPeriod = request.POST.get('tenderPeriod')
+        periodOther = request.POST.get('periodOther')
+        periodSemster = request.POST.get('periodSemster')
+
+        from datetime import date
+        #year=dateStart.split()[0]
+        #month=dateStart.split()[1]
+        #day=dateStart.split()[2]
+        d0 = date(year1, month1, day1)
+        d1 = date(year2, month2, day2)
+        delta = d1 - d0
+        actualPeriod = delta.days+1
+        extendsSummation = int(periodOther) + int(periodSemster)
+        delays = actualPeriod-int(tenderPeriod)-extendsSummation
+        if delays <= 0:
+            delays = "لا يوجد ايام تاخير"
+        context = {"delays": delays,
+                   "actualPeriod": actualPeriod,
+                   "extendsSummation": extendsSummation,
+                   "tenderPeriod": tenderPeriod}
+        return render(request, 'apps/tender_date_measure.html', context)
+    else:
+        return render(request, 'apps/tender_date_measure.html', {})

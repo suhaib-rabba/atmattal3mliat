@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<h4 class='text-center  text-success '>تطبيق حساب فرق التواريخ</h4>
+<br>
+<form  class='text-center'   action=""  method="post"> {% csrf_token %}
+
+<div class="row">
+
+
+<div class="col-sm-6">
+  <label  for=""><span class='lead '>تاريخ الانهاء الفعلي</span>
+
+    <br>
+  <input class='year mt-1' type="number" min='2019' max='2022' name="year2" placeholder="السنة">
+  <input  class='month' type="number"  min='1' max='12' name="month2"placeholder="الشهر">
+  <input class='day' type="number" min='1' max='31' name="day2" placeholder="اليوم">
+  </label>
+  </div>
+
+<div class=" col-sm-6">
+  <label for=""><span class='lead '>امر المباشرة</span>
+
+    <br>
+  <input class='year mt-1' type="number" min='2019' max='2022' name="year1" placeholder="السنة">
+  <input  class='month' type="number"  min='1' max='12' name="month1"placeholder="الشهر">
+  <input class='day' type="number" min='1' max='31' name="day1" placeholder="اليوم">
+  </div>
+
+</div>
+<br>
+<br>
+
+<div class=" row container text-center mx-auto">
+
+
+  <input type="number" class='extend col-sm-5 mx-1' name='periodSemster'  min='0' placeholder=" تمديد الصيف والشتاء"   >
+
+
+
+<input type="number" class='extend col-sm-3  mx-1  ' name='periodOther'   min='0' placeholder="تمديد اللجنة"  >
+
+
+<input type="number"  class='extend col-sm-3  mx-1' name='tenderPeriod'  min='0' placeholder="مدة العطاء"  required>
+
+</div>
+<br>
+<p class='text-end  container mt-2 '>ملاحظة: ادخل القيم بالايام</p>
+
+
+
+<input class="btn btn-success btn-bg" id='submitFirst' type='submit' value='احسب عدد ايام التاخير' >
+
+  <br>
+    </form>
+    <br>
+
+    <table class="table table-sm table-hover  container text-center " dir="rtl">
+
+
+      <thead>
+<tr>
+
+<th>#</th>
+<th>فترة العمل الكلية</th>
+<th>مدة العطاء</th>
+<th>مجموع التمديدات </th>
+<th>مدة التاخير</th>
+
+
+
+
+</tr>
+
+      </thead>
+
+  <tbody>
+
+
+<tr>
+
+<th>-</th>
+<th>{{actualPeriod}}</th>
+<th>{{tenderPeriod}}</th>
+<th>{{extendsSummation}}</th>
+<th>{{delays}}</th>
+
+
+
+
+</tr>
+
+
+
+
+  </tbody>
+
+{% endblock %}
