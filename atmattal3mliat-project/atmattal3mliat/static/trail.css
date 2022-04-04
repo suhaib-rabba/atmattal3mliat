@@ -1,0 +1,76 @@
+#mainLogo{width: 10%;
+height: 10%;}
+.mainTitle{
+  margin-right:30%;
+}
+
+
+ header{display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: solid 2px black;
+}
+#suhaib2{text-align: center;
+align-items: center;
+font-family: 'Amiri', serif;
+
+padding-left: 300px;
+}
+
+h1{
+text-align: center;
+font-family: 'Amiri', serif;
+padding-top: 30px;
+padding-left: 300px;
+}
+
+
+
+#mainLogo{width: 10%;
+height: 10%;
+margin-left: 200px;
+
+}
+.mainTitle{
+  margin-right:30%;
+}
+header{align-items: center;
+}
+
+
+.الزراعية{
+  display: flex;
+  flex-direction: column;
+}
+#roadTitle{
+  padding-left: 80px;
+}
+
+/* #departmnets{display: grid;
+grid-template-columns: 300px 200px 200px 200px 300px;
+justify-content: space-around;
+} */
+.departmnetsTitle{font-family:'Amiri', serif;
+border: 1px solid black;
+border-radius: 20px;
+padding: 10px;
+text-align: center;
+background-color:  #90ee90;
+}
+.departmnetsStyle {
+  text-align: center;
+  list-style-type: none;
+
+}
+.departmnetsStyle li {
+  font-size:20px;
+padding: 15px;
+margin-top:15px;
+border: 1px solid black;
+border-radius: 20px;
+margin-right: 25px;
+font-weight: bold;
+font-family: 'Amiri', serif;
+}
+#suhaib{text-align: right;
+font-family:'Amiri', serif; }

@@ -93,6 +93,8 @@ def diesel_view(request):
         return render(request, "apps/diesel_asphalt.html", {})
 
 #note
+
+
 def tender_study_view(request):
     if request.method == "POST":
        cost = request.POST.get('cost')

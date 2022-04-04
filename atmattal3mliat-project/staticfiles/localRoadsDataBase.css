@@ -1,0 +1,127 @@
+h1{text-align: center;
+
+font-family: 'Amiri', serif;
+padding-top: 30px;
+width: 500px;
+padding-right: 60px;}
+#suhaib2{text-align: center;
+align-items: center;
+width: 500px;
+font-family: 'Amiri', serif;
+padding-right: 60px;
+}
+.mainTitle{}
+
+#mainLogo{width: 10%;
+height: 10%;}
+.mainTitle{
+  margin-right:30%;
+}
+.mainTitle{width: 350px}
+header{display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  border: solid 2px black;
+
+}
+li{display: block;
+align-self: center;
+align-items: center;
+text-align: center;
+height: 80px;
+border-radius: 30px;
+}
+
+h6{color: blue;}
+#id_citizenName,#id_requestNumber,#id_requestDate{
+width: 300px;
+text-align: center;
+border-radius: 30px;
+height: 50px;
+border: black 2px solid;
+align-content: center;
+align-content: center;
+align-items: center;
+}
+#id_village{width: 300px;
+  height: 50px;
+  border-radius: 30px;
+  border: black 2px solid;
+  text-align: center;
+   text-indent: calc(65% - 70px);
+}
+
+
+
+
+
+#id_basinName,#id_basinNumber,#id_landNumber,#id_roadLength{width: 300px;
+text-align: center;
+border-radius: 30px;
+height: 50px;
+border: black 2px solid;}
+
+#id_roadWidth,#id_report,#id_landSubgrade{width: 300px;
+text-align: center;
+border-radius: 30px;
+height: 50px;
+border: black 2px solid;}
+#id_landSubgrade{text-indent:calc(65% - 70px); }
+#id_heavyEquipment,#id_event,#id_tendiring,#id_service,#id_currentLayer{height: 50px;
+border-radius: 30px;
+  width: 300px;
+  text-align: center;
+  text-indent:calc(67% - 60px);
+  border: black 2px solid; }
+#id_report{
+text-align: center;
+text-align: justify;
+  text-indent:calc(40% - 60px);
+}
+
+.group1{display: flex;
+justify-content: space-around;}
+
+.group2,.group3,.group4{display: flex;
+justify-content: space-around;}
+
+.align{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 150px;
+  height: 70px;
+  background: white;
+  font-family: 'Amiri', serif;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 100%;
+  border-color: green;
+  border-width: medium;
+}
+#village{position: relative;
+  margin-bottom: 60px;}
+#heavyEquipmentLabel,#landSubgradeLable,#reportLable,#villageLabel{font-family: 'Amiri', serif;
+width: 300;
+text-align: center;
+align-self: center;
+font-size: 20px;}
+
+#eventLabel,#tendiringLabel,#serviceLabel,#currentLayerLabel{font-family: 'Amiri', serif;
+width: 300;
+text-align: center;
+align-self: center;
+font-size: 20px;}
+#eventLabel{color: white;
+}
+#id_event{
+
+  height: 200px;
+  width: 300px;
+}
+
+#roadWidthLabel{
+  font-family: 'Amiri', serif;
+  font-size: 20px;
+  color:white;
+}
