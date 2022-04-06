@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h4 class='text-center mb-3  text-success '>تطبيق فترة الصيانة</h4>
+
+<form  class='text-center'   action="{% url 'tender_maintenance_url' %}"  method="post"> {% csrf_token %}
+
+<div class="row">
+
+
+<div class="col-sm-6">
+  <label  for=""><span class='lead '>فترة الصيانة</span>
+
+    <br>
+<div class="row">
+
+
+
+  <input class=' mt-1 col-sm-12  input-lg' type="number" min='12' max='36' name="interval" placeholder="بالاشهر" required>
+</div>
+  </label>
+
+
+  </div>
+
+<div class=" col-sm-6">
+  <label for=""><span class='lead '>تاريخ انتهاء الاعمال</span>
+
+    <br>
+  <input class=' mt-1  input-lg' type="number" min='2019' max='2022' name="year1" placeholder="السنة" required>
+  <input  class=' input-lg' type="number"  min='1' max='12' name="month1" placeholder="الشهر" required>
+  <input class=' input-lg' type="number" min='1' max='31' name="day1" placeholder="اليوم" required>
+  </div>
+
+  <input class="btn btn-success mx-auto w-25 mt-3" id='submitFirst' type='submit' value='ادخل القيم' >
+
+
+</div>
+<br>
+<br>
+
+
+<hr>
+<span >{{date_format.0}}</span><span class='mx-2'></span>{{date_format.1}}<span class='mx-2'>{{date_format.2}}</span>
+<hr>
+
+{% endblock %}

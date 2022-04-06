@@ -6,6 +6,8 @@ from .models import Combustibles
 from .functions.combustiblesFucntion import tamem_diesel_year
 from .functions.dateFunction import dateDifference
 from .functions.dateFunction import dateText
+from datetime import date
+from datetime import timedelta
 
 # Create your views here.
 
@@ -119,7 +121,7 @@ def tender_date(request):
         year2 = int(request.POST.get('year2'))
         month2 = int(request.POST.get('month2'))
         day2 = int(request.POST.get('day2'))
-
+        #--------------------------------
         tenderPeriod = request.POST.get('tenderPeriod')
         periodOther = request.POST.get('periodOther')
         periodSemster = request.POST.get('periodSemster')
@@ -132,6 +134,17 @@ def tender_date(request):
         d1 = date(year2, month2, day2)
         delta = d1 - d0
         actualPeriod = delta.days+1
+
+        try:
+            periodOther = int(periodOther)
+        except:
+            periodOther = 0
+
+        try:
+            periodSemster = int(periodSemster)
+        except:
+            periodSemster = 0
+
         extendsSummation = int(periodOther) + int(periodSemster)
         delays = actualPeriod-int(tenderPeriod)-extendsSummation
         if delays <= 0:
@@ -143,3 +156,31 @@ def tender_date(request):
         return render(request, 'apps/tender_date_measure.html', context)
     else:
         return render(request, 'apps/tender_date_measure.html', {})
+
+#---------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------
+
+
+def tender_maintenance(request):
+    if request.method == "POST":
+        #---------------------- تاريخ انهاء الاعمال
+        year1 = int(request.POST.get('year1'))
+        month1 = int(request.POST.get('month1'))
+        day1 = int(request.POST.get('day1'))
+        #----------------------
+
+        maintenance_interval = int(request.POST.get('interval'))
+
+        date_finish = date(year1, month1, day1)
+        date_maintenance = date_finish + \
+            timedelta(days=maintenance_interval*30)
+        date_format = [date_maintenance.year,
+                       date_maintenance.month, date_maintenance.day]
+
+        context = {date_maintenance: "date_maintenance",
+                   "a": 2,
+                   'day1': day1,
+                   "date_format": date_format}
+        return render(request, 'apps/tender_maintenance.html', context)
+    else:
+        return render(request, 'apps/tender_maintenance.html', {})

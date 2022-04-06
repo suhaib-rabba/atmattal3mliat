@@ -10,5 +10,7 @@ from django.urls import path, include
 urlpatterns = [
     path('diesel/', views.diesel_view, name='diesel_asphalt'),
     path('tender_study_phase/', views.tender_study_view, name='tender_study_phase'),
-    path('tender_date/', views.tender_date, name='tender_date')
+    path('tender_date/', views.tender_date, name='tender_date'),
+    path('tender_maintenance/', views.tender_maintenance,
+         name='tender_maintenance_url')
 ]
