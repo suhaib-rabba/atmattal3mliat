@@ -12,10 +12,10 @@
 
 
 <form class="form-inline container text-center" action="{% url 'tender_study_phase' %}"  method="post"> {% csrf_token %}
-    <input class="form-control mr-2 " type="text" min='1'  id="username" name='cost' placeholder="كلفة المشروع">
+    <input class="form-control mr-2 " type="text" min='1'  id="username" name='cost' placeholder="كلفة المشروع" required>
     <br>
 
-    <input class="form-control mr-2" type="text" min='1' id="password" name='period' placeholder="الفترة بالاشهر">
+    <input class="form-control mr-2" type="text" min='1' id="password" name='period' placeholder="الفترة بالاشهر" required>
 
 <br>
     <button class="btn btn-success btn-bg " type="submit">ادخل</button>
