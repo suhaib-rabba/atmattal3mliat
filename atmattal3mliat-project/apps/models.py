@@ -1,7 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import date
 
+from datetime import timedelta
 # Create your models here.
+from datetime import datetime
+from django.utils import timezone
 
 
 class Applications(models.Model):
@@ -38,3 +42,17 @@ class Combustibles(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class date_app(models.Model):
+    tender_name = models.TextField()
+    tender_number = models.TextField()
+    maintenance_interval = models.PositiveIntegerField()
+    date_finish = models.DateField(
+         default=datetime(2022, 11, 4, 0, 5, 23))
+    days_remaning = models.PositiveIntegerField()
+    # author = models.ForeignKey(User, on_delete=models.CASCADE)
+#auto_now_add=True,, null=True, blank=True
+
+    def __str__(self):
+        return self.tender_name
