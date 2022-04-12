@@ -44,13 +44,17 @@ class Combustibles(models.Model):
         return self.title
 
 
-class date_app(models.Model):
+class Date_app(models.Model):
     tender_name = models.TextField()
     tender_number = models.TextField()
-    maintenance_interval = models.PositiveIntegerField()
-    date_finish = models.DateField(
+    concractor_name = models.TextField()
+
+    maintenance_interval = models.IntegerField()
+    date_work = models.DateField(
          default=datetime(2022, 11, 4, 0, 5, 23))
-    days_remaning = models.PositiveIntegerField()
+    date_maintenance = models.DateField(
+         default=datetime(2022, 11, 4, 0, 5, 23))
+
     # author = models.ForeignKey(User, on_delete=models.CASCADE)
 #auto_now_add=True,, null=True, blank=True
 

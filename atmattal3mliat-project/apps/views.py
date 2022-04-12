@@ -8,6 +8,8 @@ from .functions.dateFunction import dateDifference
 from .functions.dateFunction import dateText
 from datetime import date
 from datetime import timedelta
+import datetime
+from . models import  Date_app
 
 # Create your views here.
 
@@ -167,15 +169,28 @@ def tender_maintenance(request):
         year1 = int(request.POST.get('year1'))
         month1 = int(request.POST.get('month1'))
         day1 = int(request.POST.get('day1'))
-        #----------------------
-
+        date_finish = datetime.datetime(year1, month1, day1)
         maintenance_interval = int(request.POST.get('interval'))
-
-        date_finish = date(year1, month1, day1)
         date_maintenance = date_finish + \
             timedelta(days=maintenance_interval*30)
         date_format = [date_maintenance.year,
                        date_maintenance.month, date_maintenance.day]
+        b=Date_app()
+        #-------------------------------------------------
+        b.tender_name=request.POST.get('tender_name')
+        b.tender_number=request.POST.get('tender_number')
+        b.concractor_name=request.POST.get('concractor')
+        b.maintenance_interval=int(request.POST.get('interval'))
+        b.date_work=date_finish
+        b.date_maintenance=date_maintenance
+        #-------------------------------------------------
+        b.save()
+
+
+
+        #date_finish = date(year1, month1, day1)
+
+
 
         context = {date_maintenance: "date_maintenance",
                    "a": 2,
