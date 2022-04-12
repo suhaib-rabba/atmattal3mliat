@@ -15,7 +15,7 @@ class Tender:
         return ald5ol_values
 
     def alta5ier(self):
-        return math.ceil((self.cost*0.10)/(self.period*30))
+        return int((self.cost*0.10)/(self.period*30))
 
     def minumumPayment(self):
         return math.ceil((self.cost*0.60)/self.period)
