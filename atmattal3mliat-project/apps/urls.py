@@ -12,5 +12,7 @@ urlpatterns = [
     path('tender_study_phase/', views.tender_study_view, name='tender_study_phase'),
     path('tender_date/', views.tender_date, name='tender_date'),
     path('tender_maintenance/', views.tender_maintenance,
-         name='tender_maintenance_url')
-]
+         name='tender_maintenance_url'),
+    path('tender_maintenanceRender/', views. tender_maintenanceTables,
+         name='tender_maintenanceRender')
+         ]

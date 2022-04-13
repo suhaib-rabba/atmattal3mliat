@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="" dir='rtl'>
+
+
+<table class="table table-sm table-hover  container text-center " dir="rtl">
+    <thead>
+        <tr >
+            <th>#</th>
+            <td >اسم العطاء</td>
+            <td>رقم العطاء </td>
+            <td>المقاول</td>
+            <td>تاريخ انهاء الاعمال</td>
+            <td>فترة الصيانة(بالاشهر)</td>
+            <td>عدد الايام المتبقية</td>
+            <td>تاريخ انتهاء كفالة الصيانة</td>
+
+
+
+        </tr>
+    </thead>
+      <tbody>
+{% for object in objects.all %}
+
+
+
+
+        <tr class='  '>
+            <th  scope="row">{{object.id}}</th>
+            <td >{{object.tender_name}}</td>
+            <td>{{object.tender_number}}</td>
+            <td>{{object.concractor_name}}</td>
+            <td>{{object.date_start.0}} {{object.date_start.1}}  {{object.date_start.2}} {{object.date_start.3}} {{object.date_start.4}}</td>
+            <td>{{object.maintenance_interval}}</td>
+            <td>{{object.days_remain.days}}</td>
+
+
+            <td>{{object.date_end.0}} {{object.date_end.1}}  {{object.date_end.2}} {{object.date_end.3}} {{object.date_end.4}}</td>
+
+        </tr>
+
+
+
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}

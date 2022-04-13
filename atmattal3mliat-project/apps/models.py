@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import date
 
 from datetime import timedelta
 # Create your models here.
@@ -55,8 +54,21 @@ class Date_app(models.Model):
     date_maintenance = models.DateField(
          default=datetime(2022, 11, 4, 0, 5, 23))
 
-    # author = models.ForeignKey(User, on_delete=models.CASCADE)
-#auto_now_add=True,, null=True, blank=True
+    def date_start(self):
+        a = [self.date_work.year, "/",
+             self.date_work.month, "/", self.date_work.day]
 
-    def __str__(self):
-        return self.tender_name
+        return a
+
+    def date_end(self):
+        a = [self.date_maintenance.year, "/",
+             self.date_maintenance.month, "/", self.date_maintenance.day]
+        return a
+
+    def days_remain(self):
+        days = self.date_maintenance-datetime.now().date()
+        return days
+
+
+def __str__(self):
+    return self.tender_name
