@@ -1,3 +1,5 @@
 *settings.py
 atmattal3mliat\atmattal3mliat-project\atmattal3mliat\settings.py
 atmattal3mliat-project\*.sqlite3
+db.sqlite3
+atmattal3mliat\media\
