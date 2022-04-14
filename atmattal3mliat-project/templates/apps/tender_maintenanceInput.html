@@ -2,8 +2,8 @@
 {% block content %}
 
 
-<h4 class='text-center mb-3  text-success '>تطبيق فترة الصيانة</h4>
-
+<h4 class='text-center mb-3  text-success '>تطبيق كفالة الصيانة للعطاءات (ادخال)</h4>
+<br>
 <form  class='text-center'   action="{% url 'tender_maintenance_url' %}"  method="post"> {% csrf_token %}
 
 <div class="row">
@@ -42,9 +42,9 @@
 <input class='col-sm-4'  type="text" name="tender_name" placeholder="اسم العطاء">
 
   </div>
+<br>
 
-
-  <input class="btn btn-success mx-auto w-25 mt-3" id='submitFirst' type='submit' value='ادخل القيم' >
+  <input class="btn btn-success mx-auto  w-25 mt-4" id='submitFirst' type='submit' value='ادخل القيم' >
 
 
 </div>

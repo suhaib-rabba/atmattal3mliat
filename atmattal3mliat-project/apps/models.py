@@ -61,13 +61,17 @@ class Date_app(models.Model):
         return a
 
     def date_end(self):
-        a = [self.date_maintenance.year, "/",
-             self.date_maintenance.month, "/", self.date_maintenance.day]
+        a = ["/", self.date_maintenance.year,
+             self.date_maintenance.month, self.date_maintenance.day]
         return a
 
     def days_remain(self):
-        days = self.date_maintenance-datetime.now().date()
-        return days
+        intrval = self.date_maintenance-datetime.now().date()
+        month = int((intrval.days)/30)
+        days = intrval.days % 30
+        interval = str(month) + " " + "شهر" + " " + \
+            "و" + " " + str(days) + " يوماً"
+        return interval
 
 
 def __str__(self):

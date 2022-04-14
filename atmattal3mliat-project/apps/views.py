@@ -7,13 +7,17 @@ from .functions.combustiblesFucntion import tamem_diesel_year
 from .functions.dateFunction import dateDifference
 from .functions.dateFunction import dateText
 
+from dateutil.relativedelta import relativedelta
+
 from datetime import date
 from datetime import timedelta
 import datetime
 from . models import Date_app
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 #--------------------------
+
 
 def date_format(dateObject):
     date_3 = [dateObject.year, dateObject.month, dateObject.day]
@@ -173,7 +177,9 @@ def tender_date(request):
 #---------------------------------------------------------------------------------------
 
 
+@login_required()
 def tender_maintenance(request):
+
     if request.method == "POST":
         #---------------------- تاريخ انهاء الاعمال
         year1 = int(request.POST.get('year1'))
@@ -181,8 +187,10 @@ def tender_maintenance(request):
         day1 = int(request.POST.get('day1'))
         date_finish = datetime.datetime(year1, month1, day1)
         maintenance_interval = int(request.POST.get('interval'))
+        interval_year = int(maintenance_interval/12)
+        interval_month = int(maintenance_interval % 12)
         date_maintenance = date_finish + \
-            timedelta(days=maintenance_interval*30)
+            relativedelta(years=interval_year, months=interval_month)
 
         b = Date_app()
         #-------------------------------------------------
@@ -194,16 +202,18 @@ def tender_maintenance(request):
         b.date_maintenance = date_maintenance
         #-------------------------------------------------
         b.save()
+        objects = Date_app.objects
+        context = {"objects": objects}
 
         #date_finish = date(year1, month1, day1)
 
-        context = {}
-        return render(request, 'apps/tender_maintenanceInput.html', context)
+        return render(request, 'apps/tender_maintenanceRender.html', context)
     else:
         return render(request, 'apps/tender_maintenanceInput.html', {})
 
 
 def tender_maintenanceTables(request):
+    a = request.user
     objects = Date_app.objects
     context = {"objects": objects}
     return render(request, 'apps/tender_maintenanceRender.html', context)

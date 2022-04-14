@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
+
+<br>
+<h4 class='text-center  text-success '>
+تطبيق  كفالة الصيانة للعطاءات </h4>
+<br>
+
 <div class="" dir='rtl'>
 
 
@@ -31,19 +38,28 @@
             <td >{{object.tender_name}}</td>
             <td>{{object.tender_number}}</td>
             <td>{{object.concractor_name}}</td>
-            <td>{{object.date_start.0}} {{object.date_start.1}}  {{object.date_start.2}} {{object.date_start.3}} {{object.date_start.4}}</td>
+            <td>{{object.date_start.4}}  {{object.date_start.3}} {{object.date_start.2}} {{object.date_start.1}} {{object.date_start.0}}    </td>
             <td>{{object.maintenance_interval}}</td>
-            <td>{{object.days_remain.days}}</td>
+            <td>{{object.days_remain}}</td>
 
 
-            <td>{{object.date_end.0}} {{object.date_end.1}}  {{object.date_end.2}} {{object.date_end.3}} {{object.date_end.4}}</td>
+            <td>{{object.date_end.1}}{{object.date_end.0}}{{object.date_end.2}}{{object.date_end.0}}{{object.date_end.3}}</td>
 
         </tr>
-
 
 
 {% endfor %}
 </tbody>
 </table>
 </div>
+
+<br>
+<div class="text-center">
+
+  <form action="{% url 'tender_maintenance_url' %}" >
+
+<input class="btn btn-success btn-bg mx-auto text-center w-25 self-align-center mx-auto" id='submitFirst' type='submit' value='لوحة الادخال' ></div>
+</form>
+<h1 class='text-center'>{{permission}}</h1>
+
 {% endblock %}
