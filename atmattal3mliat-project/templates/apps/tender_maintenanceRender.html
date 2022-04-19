@@ -54,12 +54,48 @@
 </div>
 
 <br>
-<div class="text-center">
+  <div class="row container mx-auto">
+{% for object in objects.all %}
 
-  <form action="{% url 'tender_maintenance_url' %}" >
+
+
+    <div class="col-sm-6 my-2 text-center">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{object.tender_name}}</h4>
+          <h5>{{object.tender_number}}</h5>
+          <h6>{{object.concractor_name}}</h6>
+          <div class="mb-2 row">
+          <p>الفترة المتبقية لاتهاء فترة كفالة الصيانة</p>
+          <ul class="list-group col-sm-6">
+            <li class="list-group-item">شهر</li>
+            <li class="list-group-item">{{object.days_remain.0}}</li>
+          </ul>
+          <ul class="list-group col-sm-6">
+            <li class="list-group-item">يوم</li>
+            <li class="list-group-item">{{object.days_remain.0}}</li>
+          </ul>
+
+          </div>
+          <div class=" row">
+          <p>تاريخ انتهاء فترة كفالة الصيانة</p>
+          <button  class="btn btn-primary mx-auto" name="button">{{object.date_end}}</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+{% endfor %}
+    </div>
+
+<div class="text-center mt-2">
+
+  <form action="{% url 'tender_maintenance_url' %}">
 
 <input class="btn btn-success btn-bg mx-auto text-center w-25 self-align-center mx-auto" id='submitFirst' type='submit' value='لوحة الادخال' ></div>
 </form>
-<h1 class='text-center'>{{permission}}</h1>
+
+</div>
+
 
 {% endblock %}

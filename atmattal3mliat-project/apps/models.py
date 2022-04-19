@@ -57,21 +57,30 @@ class Date_app(models.Model):
     def date_start(self):
         a = [self.date_work.year, "/",
              self.date_work.month, "/", self.date_work.day]
+        a = str(self.date_work.year)+"/" + \
+            str(self.date_work.month) + \
+            "/" + str(self.date_work.day)
 
         return a
 
     def date_end(self):
         a = ["/", self.date_maintenance.year,
              self.date_maintenance.month, self.date_maintenance.day]
+        a = str(self.date_maintenance.year)+"/" + \
+            str(self.date_maintenance.month) + \
+            "/" + str(self.date_maintenance.day)
         return a
 
     def days_remain(self):
         intrval = self.date_maintenance-datetime.now().date()
         month = int((intrval.days)/30)
         days = intrval.days % 30
+
         interval = str(month) + " " + "شهر" + " " + \
             "و" + " " + str(days) + " يوماً"
-        return interval
+        month = str(month)
+        days = str(days)
+        return [month, days]
 
 
 def __str__(self):
