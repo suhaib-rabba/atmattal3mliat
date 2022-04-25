@@ -76,12 +76,16 @@ class Date_app(models.Model):
         month = int((intrval.days)/30)
         days = intrval.days % 30
 
-        interval = str(month) + " " + "شهر" + " " + \
-            "و" + " " + str(days) + " يوماً"
+        interval = month*30+days
         month = str(month)
         days = str(days)
-        return [month, days]
+        return [month, days, interval]
 
+    def days_remain2(self):
+        intrval = self.date_maintenance-datetime.now().date()
+        month = int((intrval.days)/30)
+        days = intrval.days % 30
+        return month*30 + days
 
-def __str__(self):
-    return self.tender_name
+    def __str__(self):
+       return self.tender_name

@@ -8,58 +8,11 @@
 تطبيق  كفالة الصيانة للعطاءات </h4>
 <br>
 
-<div class="" dir='rtl'>
-
-
-<table class="table table-sm table-hover  container text-center " dir="rtl">
-    <thead>
-        <tr >
-            <th>#</th>
-            <td >اسم العطاء</td>
-            <td>رقم العطاء </td>
-            <td>المقاول</td>
-            <td>تاريخ انهاء الاعمال</td>
-            <td>فترة الصيانة(بالاشهر)</td>
-            <td>عدد الايام المتبقية</td>
-            <td>تاريخ انتهاء كفالة الصيانة</td>
-
-
-
-        </tr>
-    </thead>
-      <tbody>
-{% for object in objects.all %}
-
-
-
-
-        <tr class='  '>
-            <th  scope="row">{{object.id}}</th>
-            <td >{{object.tender_name}}</td>
-            <td>{{object.tender_number}}</td>
-            <td>{{object.concractor_name}}</td>
-            <td>{{object.date_start.4}}  {{object.date_start.3}} {{object.date_start.2}} {{object.date_start.1}} {{object.date_start.0}}    </td>
-            <td>{{object.maintenance_interval}}</td>
-            <td>{{object.days_remain}}</td>
-
-
-            <td>{{object.date_end.1}}{{object.date_end.0}}{{object.date_end.2}}{{object.date_end.0}}{{object.date_end.3}}</td>
-
-        </tr>
-
-
-{% endfor %}
-</tbody>
-</table>
-</div>
-
-<br>
   <div class="row container mx-auto">
-{% for object in objects.all %}
+{% for object in objects_list %}
 
 
-
-    <div class="col-sm-6 my-2 text-center">
+    <div class="col-sm-4 my-2 text-center">
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">{{object.tender_name}}</h4>
@@ -73,7 +26,7 @@
           </ul>
           <ul class="list-group col-sm-6">
             <li class="list-group-item">يوم</li>
-            <li class="list-group-item">{{object.days_remain.0}}</li>
+            <li class="list-group-item">{{object.days_remain.1}}</li>
           </ul>
 
           </div>
@@ -88,12 +41,12 @@
 {% endfor %}
     </div>
 
-<div class="text-center mt-2">
+<!-- <div class="text-center mt-2">
 
   <form action="{% url 'tender_maintenance_url' %}">
 
 <input class="btn btn-success btn-bg mx-auto text-center w-25 self-align-center mx-auto" id='submitFirst' type='submit' value='لوحة الادخال' ></div>
-</form>
+</form> -->
 
 </div>
 

@@ -6,6 +6,7 @@ from .models import Combustibles
 from .functions.combustiblesFucntion import tamem_diesel_year
 from .functions.dateFunction import dateDifference
 from .functions.dateFunction import dateText
+from operator import attrgetter
 
 from dateutil.relativedelta import relativedelta
 
@@ -214,6 +215,13 @@ def tender_maintenance(request):
 
 def tender_maintenanceTables(request):
     a = request.user
-    objects = Date_app.objects
-    context = {"objects": objects}
+    objects = Date_app.objects.all()
+    objects_list = []
+
+    objects_list = list(objects)
+    objects_list = sorted(objects_list, key=lambda x: x.days_remain2())
+    #sort(key=lambda x: x.days_remain2())
+
+    context = {"objects": objects,
+               "objects_list": objects_list}
     return render(request, 'apps/tender_maintenanceRender.html', context)
