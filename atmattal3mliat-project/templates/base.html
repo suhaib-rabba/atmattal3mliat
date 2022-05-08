@@ -85,7 +85,7 @@
         </form>
         {% else %}
 
-        {% if request.get_full_path == "/accounts/signup" %}
+        <!-- {% if request.get_full_path == "/accounts/signup" %}
         <li class="nav-item">
         <a class=" nav-link active   mx-1" href="{% url 'signup' %}"> تسجيل مستخدم جديد </a>
         </li>
@@ -93,7 +93,7 @@
         <li class="nav-item">
         <a class=" nav-link   mx-1" href="{% url 'signup' %}"> تسجيل مستخدم جديد </a>
         </li>
-        {% endif %}
+        {% endif %} -->
         {% if request.get_full_path == "/accounts/login" %}
         <li class='nav-item'>
         <a class=" nav-link active   mx-1 " href="{% url 'login' %}"> دخول </a>
