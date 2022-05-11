@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<h4 class='text-center  text-success'>برنامج ادخال التقرير الشهري </h4>
+
+<form class="text-center" action="index.html" method="post">
+
+
+
+<div class="row container">
+
+
+
+
+
+
+
+  <div class="input-group mt-3 text-center  ">
+    <select class="form-select monthlyReport" id="inputGroupSelect01">
+      <option selected class='text-"text-center'>اختر</option>
+      <option  value="1">مديرية اشغال مادبا </option>
+      <option value="2">مكتب اشغال ذيبان</option>
+
+    </select>
+    <label class="input-group-text" for="inputGroupSelect01">مركز العمل</label>
+
+  </div>
+
+  <div class="input-group mt-2">
+    <input type="text" class="form-control" placeholder=",,,,مادبا,فيصلية,جرينة,الفيحاء" aria-label="Username" aria-describedby="basic-addon1">
+    <span class="input-group-text" id="basic-addon1">منطقة العمل</span>
+
+  </div>
+
+  <div class="input-group mt-2">
+
+    <input  class='form-control' type="number" min='2019' max='2022' value=2022 name="year1" placeholder="السنة" required>
+    <input    class='form-control' type="number"  min='1' max='12' value=5 name="month1" placeholder="الشهر" required>
+    <input class=' form-control' type="number" min='1' max='31' name="day1" placeholder="اليوم" required>
+  <span class="input-group-text">تاريخ تنفيذ الاعمال</span>
+  </div>
+
+  <div class="input-group mb-3 mt-2">
+  <input type="file" class="form-control" id="inputGroupFile01">
+  <label class="input-group-text" for="inputGroupFile01">تحميل الصورة</label>
+
+</div>
+
+
+<div class=" col-sm-12 mt-2 mx-3" >
+  <textarea name="name" rows="4"  class='form-control' placeholder="وصف العمل المنجز"></textarea>
+</div>
+
+</div>
+<br>
+
+
+
+
+
+  <input class="btn btn-success mx-auto  w-25 mt-4" id='submitFirst' type='submit' value='ادخل القيم' >
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

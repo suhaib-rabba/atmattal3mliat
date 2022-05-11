@@ -225,3 +225,10 @@ def tender_maintenanceTables(request):
     context = {"objects": objects,
                "objects_list": objects_list}
     return render(request, 'apps/tender_maintenanceRender.html', context)
+
+    #---------------------------------------------------------------------------
+
+
+def monthly_report(request):
+    context = {}
+    return render(request, 'monthlyReport/monthlyReportInput.html', context)
