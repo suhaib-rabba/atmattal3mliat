@@ -7,15 +7,14 @@ from .functions.combustiblesFucntion import tamem_diesel_year
 from .functions.dateFunction import dateDifference
 from .functions.dateFunction import dateText
 from operator import attrgetter
-
 from dateutil.relativedelta import relativedelta
-
 from datetime import date
 from datetime import timedelta
 import datetime
 from . models import Date_app
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from .models import monthlyReportModel
 
 #--------------------------
 
@@ -230,5 +229,24 @@ def tender_maintenanceTables(request):
 
 
 def monthly_report(request):
-    context = {}
-    return render(request, 'monthlyReport/monthlyReportInput.html', context)
+    if request.method == "POST":
+        #--------------------------------
+        year1 = int(request.POST.get('year1'))
+        month1 = int(request.POST.get('month1'))
+        day1 = int(request.POST.get('day1'))
+        date_work = datetime.datetime(year1, month1, day1)
+        #---------------------------------
+        model = monthlyReportModel()
+        model.sector = request.POST.get('office')
+        model.department = request.POST.get('department')
+        model.date_work = date_work
+        model.image = request.POST.get('workImage')
+        model.area = request.POST.get('area')
+        model.work = request.POST.get('workDescription')
+        model.save()
+        context = {}
+        return render(request, 'monthlyReport/monthlyReportInput.html', context)
+
+    else:
+        context = {}
+        return render(request, 'monthlyReport/monthlyReportInput.html', context)

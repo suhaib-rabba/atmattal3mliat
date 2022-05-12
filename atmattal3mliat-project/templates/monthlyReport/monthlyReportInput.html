@@ -6,7 +6,7 @@
 
 <h4 class='text-center  text-success'>برنامج ادخال التقرير الشهري </h4>
 
-<form class="text-center" action="index.html" method="post">
+<form class="text-center" action="{% url 'reportInput' %}" method="post"> {% csrf_token %}
 
 
 
@@ -19,18 +19,38 @@
 
 
   <div class="input-group mt-3 text-center  ">
-    <select class="form-select monthlyReport" id="inputGroupSelect01">
+    <select class="form-select monthlyReport" id="inputGroupSelect01" name='office'>
       <option selected class='text-"text-center'>اختر</option>
-      <option  value="1">مديرية اشغال مادبا </option>
-      <option value="2">مكتب اشغال ذيبان</option>
+      <option  value="مديرية اشغال مادبا ">مديرية اشغال مادبا</option>
+      <option value="مكتب اشغال ذيبان">مكتب اشغال ذيبان</option>
 
     </select>
     <label class="input-group-text" for="inputGroupSelect01">مركز العمل</label>
 
   </div>
 
+
+
+
+    <div class="input-group mt-3 text-center  ">
+      <select class="form-select monthlyReport" id="inputGroupSelect01" name='department'>
+        <option selected class='text-"text-center'>اختر</option>
+        <option  value="قسم تنفيذ الطرق" >قسم تنفيذ الطرق</option>
+        <option value="قسم الطرق الزراعية">قسم الطرق الزراعية</option>
+        <option value="قسم صيانة الطرق">قسم صيانة الطرق</option>
+        <option value="قسم السلامة المرورية">قسم السلامة المرورية</option>
+        <option value="قسم الأبنية">قسم الأبنية</option>
+
+      </select>
+      <label class="input-group-text" for="inputGroupSelect01">القسم</label>
+
+    </div>
+
+
+
+
   <div class="input-group mt-2">
-    <input type="text" class="form-control" placeholder=",,,,مادبا,فيصلية,جرينة,الفيحاء" aria-label="Username" aria-describedby="basic-addon1">
+    <input name='area' type="text" class="form-control" placeholder=",,,,مادبا,فيصلية,جرينة,الفيحاء" aria-label="Username" aria-describedby="basic-addon1">
     <span class="input-group-text" id="basic-addon1">منطقة العمل</span>
 
   </div>
@@ -44,14 +64,14 @@
   </div>
 
   <div class="input-group mb-3 mt-2">
-  <input type="file" class="form-control" id="inputGroupFile01">
+  <input type="file" class="form-control" id="inputGroupFile01" name='workImage'>
   <label class="input-group-text" for="inputGroupFile01">تحميل الصورة</label>
 
 </div>
 
 
 <div class=" col-sm-12 mt-2 mx-3" >
-  <textarea name="name" rows="4"  class='form-control' placeholder="وصف العمل المنجز"></textarea>
+  <textarea  rows="4"  class='form-control' placeholder="وصف العمل المنجز" name='workDescription'></textarea>
 </div>
 
 </div>
