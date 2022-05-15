@@ -243,6 +243,8 @@ def monthly_report(request):
         model.image = request.POST.get('workImage')
         model.area = request.POST.get('area')
         model.work = request.POST.get('workDescription')
+        model.month = month1
+        model.year = year1
         model.save()
         context = {}
         return render(request, 'monthlyReport/monthlyReportInput.html', context)

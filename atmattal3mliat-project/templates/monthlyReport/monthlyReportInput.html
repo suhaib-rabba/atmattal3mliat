@@ -19,7 +19,7 @@
 
 
   <div class="input-group mt-3 text-center  ">
-    <select class="form-select monthlyReport" id="inputGroupSelect01" name='office'>
+    <select class="form-select monthlyReport" id="inputGroupSelect01" name='office' required>
       <option selected class='text-"text-center'>اختر</option>
       <option  value="مديرية اشغال مادبا ">مديرية اشغال مادبا</option>
       <option value="مكتب اشغال ذيبان">مكتب اشغال ذيبان</option>
@@ -33,7 +33,7 @@
 
 
     <div class="input-group mt-3 text-center  ">
-      <select class="form-select monthlyReport" id="inputGroupSelect01" name='department'>
+      <select class="form-select monthlyReport" id="inputGroupSelect01" name='department' required>
         <option selected class='text-"text-center'>اختر</option>
         <option  value="قسم تنفيذ الطرق" >قسم تنفيذ الطرق</option>
         <option value="قسم الطرق الزراعية">قسم الطرق الزراعية</option>
@@ -50,7 +50,7 @@
 
 
   <div class="input-group mt-2">
-    <input name='area' type="text" class="form-control" placeholder=",,,,مادبا,فيصلية,جرينة,الفيحاء" aria-label="Username" aria-describedby="basic-addon1">
+    <input name='area' type="text" class="form-control" placeholder=",,,,مادبا,فيصلية,جرينة,الفيحاء" aria-label="Username" aria-describedby="basic-addon1" required>
     <span class="input-group-text" id="basic-addon1">منطقة العمل</span>
 
   </div>
@@ -64,14 +64,14 @@
   </div>
 
   <div class="input-group mb-3 mt-2">
-  <input type="file" class="form-control" id="inputGroupFile01" name='workImage'>
+  <input type="file" class="form-control" id="inputGroupFile01" name='workImage' required>
   <label class="input-group-text" for="inputGroupFile01">تحميل الصورة</label>
 
 </div>
 
 
 <div class=" col-sm-12 mt-2 mx-3" >
-  <textarea  rows="4"  class='form-control' placeholder="وصف العمل المنجز" name='workDescription'></textarea>
+  <textarea  rows="4"  class='form-control' placeholder="وصف العمل المنجز" name='workDescription' required></textarea>
 </div>
 
 </div>

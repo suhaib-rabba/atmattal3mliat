@@ -96,9 +96,13 @@ class monthlyReportModel(models.Model):
     department = models.CharField(max_length=255)
     date_work = models.DateField(
              default=datetime(2022, 11, 4, 0, 5, 23))
+    month = models.IntegerField()
+    year = models.IntegerField()
+
+    year = models.IntegerField()
     area = models.CharField(max_length=255)
     work = models.TextField()
     image = models.ImageField(upload_to='monthlyReport/', blank=True)
 
     def __str__(self):
-        return self.department
+        return self.department+' ('+str(self.month)+")"
