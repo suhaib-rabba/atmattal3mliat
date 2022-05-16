@@ -28,7 +28,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('application/', include('apps.urls')),
-    path('monthly_report/', views.monthly_report, name='reportInput')
+    path('monthly_report/', views.monthly_report, name='reportInput'),
+    path('monthly_reportRender/', views.monthly_reportRender, name='reportRender'),
 
 
 

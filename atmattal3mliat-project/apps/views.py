@@ -15,7 +15,7 @@ from . models import Date_app
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import monthlyReportModel
-
+import operator
 #--------------------------
 
 
@@ -241,11 +241,12 @@ def monthly_report(request):
         model.department = request.POST.get('department')
         model.date_work = date_work
         doc = request.FILES
-        model.image = doc['docfile']
+        model.photo = doc['docfile']
         model.area = request.POST.get('area')
         model.work = request.POST.get('workDescription')
         model.month = month1
         model.year = year1
+        model.code = len(sector)
         model.save()
         context = {}
         return render(request, 'monthlyReport/monthlyReportInput.html', context)
@@ -253,3 +254,12 @@ def monthly_report(request):
     else:
         context = {}
         return render(request, 'monthlyReport/monthlyReportInput.html', context)
+
+
+def monthly_reportRender(request):
+    objects = monthlyReportModel.objects.all()
+    objects = list(objects)
+    objects = sorted(objects, key=lambda x: x.code)
+
+    context = {"objects": objects}
+    return render(request, 'monthlyReport/monthlyReportRender.html', context)
