@@ -102,7 +102,7 @@ class monthlyReportModel(models.Model):
     year = models.IntegerField()
     area = models.CharField(max_length=255)
     work = models.TextField()
-    image = models.ImageField(upload_to='monthlyReport/', blank=True)
+    image = models.FileField(upload_to='monthlyReport/', blank=True)
 
     def __str__(self):
         return self.department+' ('+str(self.month)+")"

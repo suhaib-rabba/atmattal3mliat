@@ -240,7 +240,8 @@ def monthly_report(request):
         model.sector = request.POST.get('office')
         model.department = request.POST.get('department')
         model.date_work = date_work
-        model.image = request.POST.get('workImage')
+        doc = request.FILES
+        model.image = doc['docfile']
         model.area = request.POST.get('area')
         model.work = request.POST.get('workDescription')
         model.month = month1
