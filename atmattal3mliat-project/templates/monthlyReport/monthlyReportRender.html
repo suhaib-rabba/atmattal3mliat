@@ -4,31 +4,44 @@
 
 <br>
 <br>
-<h4 class='text-center  text-success'>التقرير الشهري للاعمال المنجزة لمديرية اشغال مادبا</h4>
-
+<h4 class='text-center  text-success'>انجازات مديرية اشغال مادبا لشهر ايار</h4>
 
 <br>
-
-<div class="row container justify-content-center">
-
+<div class="row container text-center justify-content-center">
 
 {% for object in objects %}
 
+<div class="col-sm-6 my-2">
+<!-- style="width: 18rem;hight:18rem; -->
+<div class="card"  >
+  <div class="card-header">
+<h6>{{object.sector}}</h6>
+<h6>{{object.department}}</h6>
 
+ </div>
+  <img src={{object.photo.url}} he class="card-img-top" alt="..." style="height:18rem"  >
+  <div class="card-body " height="50" >
 
+    <p  class="card-text text-justify">{{object.work}}</p>
+    <p class="card-text ">{{object.date_work}}</p>
 
-<div class="card bg-dark text-white col-md-5 mx-1 my-2">
-  <img src="{{object.photo.url}}" class="card-img" alt="..."  width="400" height="250">
-  <div class="card-img-overlay">
-    <h5 class="card-title">{{object.department}}</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
   </div>
 </div>
+</div>
+
+
+
+
+
+
+
 
 {% endfor %}
 
-</div>
+
+
+
+
 
 
 {% endblock %}
