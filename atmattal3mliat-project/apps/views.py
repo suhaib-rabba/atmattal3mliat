@@ -248,7 +248,8 @@ def monthly_report(request):
         model.year = year1
         model.code = len(request.POST.get('office'))
         model.save()
-        context = {}
+        responed="تم الادخال بنجاح"
+        context = {'success':responed}
         return render(request, 'monthlyReport/monthlyReportInput.html', context)
 
     else:
