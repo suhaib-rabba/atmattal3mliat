@@ -246,7 +246,7 @@ def monthly_report(request):
         model.work = request.POST.get('workDescription')
         model.month = month1
         model.year = year1
-        model.code = len(request.POST.get('office'))
+        model.code = len(request.POST.get('department'))
         model.save()
         responed="تم الادخال بنجاح"
         context = {'success':responed}
