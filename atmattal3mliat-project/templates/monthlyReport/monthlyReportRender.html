@@ -14,9 +14,9 @@
 
 {% for object in objects %}
 
-<div class="col-sm-6 my-2">
+<div class="col-sm-6 my-2" id="{{object.department}}">
 <!-- style="width: 18rem;hight:18rem; -->
-<div class="card"  >
+<div class="card" >
   <div class="card-header">
 <h6>{{object.sector}}</h6>
 <h6>{{object.department}}</h6>
@@ -47,7 +47,7 @@
 <div class="text-center">
 
 
-<input class='btn btn-success ' type='button' id='btnPictures' value='Print' onclick='printDiv();'>
+<input class='btn btn-success ' type='button' id='btnPictures' value='اطبع' onclick='printDiv();'>
 
 </div>
 
@@ -68,9 +68,11 @@
       document.body.innerHTML = oldstr;
       return false;
   }
+
   $('#btnPictures').on('click',function(){
    printdiv('monthlyReport');
   })
+
 
 </script>
 
