@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
 
+<div id="monthlyReport">
+
+
 <br>
 <br>
 <h4 class='text-center  text-success'>انجازات مديرية اشغال مادبا لشهر ايار</h4>
@@ -37,11 +40,38 @@
 
 
 {% endfor %}
+</div>
+</div>
+
+<br>
+<div class="text-center">
+
+
+<input class='btn btn-success ' type='button' id='btnPictures' value='Print' onclick='printDiv();'>
+
+</div>
 
 
 
 
 
 
+<script type="text/javascript">
+
+  function printdiv(printdivname) {
+      var headstr = "<html><head><title>Booking Details</title></head><body>";
+      var footstr = "</body>";
+      var newstr = document.getElementById(printdivname).innerHTML;
+      var oldstr = document.body.innerHTML;
+      document.body.innerHTML = headstr+newstr+footstr;
+      window.print();
+      document.body.innerHTML = oldstr;
+      return false;
+  }
+  $('#btnPictures').on('click',function(){
+   printdiv('monthlyReport');
+  })
+
+</script>
 
 {% endblock %}
