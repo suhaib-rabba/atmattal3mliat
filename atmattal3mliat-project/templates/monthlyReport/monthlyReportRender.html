@@ -14,7 +14,7 @@
 
 {% for object in objects %}
 
-<div class="col-md-12 my-2" id="{{object.department}}" style="display:block" >
+<div class="col-md-6 my-2 mx-auto" id="{{object.department}}" style="display:block" >
 <!-- style="width: 18rem;hight:18rem; -->
 <div class="card"  >
   <div class="card-header">
@@ -26,8 +26,8 @@
   <div class="card-body " height="50" >
     <p  class="card-text text-justify">منطقة العمل :  {{object.area}}</p>
 
-    <p  class="card-text text-justify">{{object.work}}</p>
-    <p class="card-text "> {{object.date_work}}</p>
+    <p  class="card-text text-justify">وصف العمل :{{object.work}}</p>
+    <p class="card-text "> {{object.date_work}} : تاريخ التنفيذ</p>
 
   </div>
 </div>
