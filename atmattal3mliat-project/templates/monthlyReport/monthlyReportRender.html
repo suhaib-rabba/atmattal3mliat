@@ -10,19 +10,19 @@
 <h4 class='text-center  text-success'>انجازات مديرية اشغال مادبا لشهر ايار</h4>
 
 <br>
-<div class="row container text-center justify-content-center mx-auto">
+<div class="row container text-center justify-content-center mx-auto" ;" >
 
 {% for object in objects %}
 
-<div class="col-sm-6 my-2" id="{{object.department}}">
+<div class="col-sm-6 my-2" id="{{object.department}}"  >
 <!-- style="width: 18rem;hight:18rem; -->
-<div class="card" >
+<div class="card"  >
   <div class="card-header">
 <h6>{{object.sector}}</h6>
 <h6>{{object.department}}</h6>
 
  </div>
-  <img src={{object.photo.url}} he class="card-img-top" alt="..." style="height:18rem"  >
+  <img src={{object.photo.url}} he class="card-img-top" alt="..." style="height:16.5rem"  >
   <div class="card-body " height="50" >
     <p  class="card-text text-justify">منطقة العمل :  {{object.area}}</p>
 
