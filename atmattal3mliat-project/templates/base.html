@@ -8,11 +8,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    @media print {
-      .container { display: block; } /* this is key */
+    @media print{
+    * {
+        display:inline;
+    }
+    script, style {
+        display:none;
+    }
+    div {
+        page-break-inside:avoid;
+    }
 
-      div, p, ..etc { page-break-inside: avoid; }
-  }
+    }
     input {
       text-align: center !important ;
     }
