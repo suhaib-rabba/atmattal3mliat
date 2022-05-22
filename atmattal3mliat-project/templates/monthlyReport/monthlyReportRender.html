@@ -16,19 +16,45 @@
 
 <div class="col-md-6 my-2 mx-auto" id="{{object.department}}" style="display:block" >
 <!-- style="width: 18rem;hight:18rem; -->
-<div class="card"  >
+<div class="card">
   <div class="card-header">
-<h6>{{object.sector}}</h6>
-<h6>{{object.department}}</h6>
+<h6>{{object.sector}}    </h6>
+<h6>             {{object.department}}</h6>
 
  </div>
   <img src={{object.photo.url}} he class="card-img-top" alt="..." style="height:20rem"  >
   <div class="card-body " height="50" >
-    <p  class="card-text text-justify">منطقة العمل :  {{object.area}}</p>
+    <!-- <p  class="card-text text-justify">منطقة العمل :  {{object.area}}</p>
 
     <p  class="card-text text-justify">وصف العمل :{{object.work}}</p>
-    <p class="card-text "> {{object.date_work}} : تاريخ التنفيذ</p>
+    <p class="card-text "> {{object.date_work}} : تاريخ التنفيذ</p> -->
 
+
+<div dir="rtl">
+
+
+    <table class="table table-hover table-borderless" >
+
+      <tbody>
+        <tr class="w-25">
+          <td>منطقة العمل</td>
+          <td>{{object.area}}</td>
+
+
+        </tr>
+        <tr class="w-25">
+          <td>وصف العمل</td>
+          <td>{{object.work}}</td>
+
+        </tr>
+        <tr class="w-25">
+          <td>تاريخ التنفيذ</td>
+          <td>{{object.date_work}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+    </div>
   </div>
 </div>
 </div>
