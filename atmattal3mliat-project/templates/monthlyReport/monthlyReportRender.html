@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load js %}
 
 
+
+<br>
+<br>
 <div id="monthlyReport">
 
 
-<br>
-<br>
 <h4 class='text-center  text-success'>انجازات مديرية اشغال مادبا لشهر ايار</h4>
 
 <br>
+<br>
+
 <div class="row container text-center justify-content-center mx-auto" style="display:block" >
 
 {% for object in objects %}
 
-<div class="col-md-6 my-2 mx-auto" id="{{object.department}}" style="display:block" >
+<div class="col-md-6 my-3 mx-auto" id="{{object.department}}" style="display:block" >
 <!-- style="width: 18rem;hight:18rem; -->
 <div class="card">
   <div class="card-header">
@@ -29,7 +33,7 @@
 
  </div>
   <img src={{object.photo.url}} he class="card-img-top" alt="..." style="height:20rem"  >
-  <div class="card-body " height="50" >
+  <div class="card-header"  >
     <!-- <p  class="card-text text-justify">منطقة العمل :  {{object.area}}</p>
 
     <p  class="card-text text-justify">وصف العمل :{{object.work}}</p>
@@ -89,9 +93,15 @@
 
 
 
-
-
-
+<!-- ----------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------- -->
+<br>
+<br>
+<!-- <div class="gallery mx-center text-center">
+  <img src="/media/monthlyReport/32-2021_eC4VdA9.jpg" width='300' hight='300'  alt="">
+</div> -->
+<!-- ----------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------- -->
 
 
 <script type="text/javascript">
@@ -108,11 +118,30 @@
   }
 
 
+var galleryImage=$('.gallery').find('img').first();
+var images={{trail | js}}
+var i=0;
+setInterval(function() {
+
+    i = (i + 1) % images.length;
+
+
+    galleryImage.fadeOut(function() {
+      $(this).attr("src", images[i]);
+      $(this).fadeIn();
+    });
+
+
+  }, 2000);
+
+
+
   $('#btnPictures').on('click',function(){
+    alert(images[0])
     $('#btnPictures').remove();
+
     printdiv('monthlyReport');
   })
-
 
 </script>
 

@@ -248,8 +248,8 @@ def monthly_report(request):
         model.year = year1
         model.code = len(request.POST.get('department'))
         model.save()
-        responed="تم الادخال بنجاح"
-        context = {'success':responed}
+        responed = "تم الادخال بنجاح"
+        context = {'success': responed}
         return render(request, 'monthlyReport/monthlyReportInput.html', context)
 
     else:
@@ -262,5 +262,9 @@ def monthly_reportRender(request):
     objects = list(objects)
     objects = sorted(objects, key=lambda x: x.code)
 
-    context = {"objects": objects}
+    trail = []
+    for object in objects:
+        trail.append(object.photo.url)
+
+    context = {"objects": objects, 'trail': trail}
     return render(request, 'monthlyReport/monthlyReportRender.html', context)
