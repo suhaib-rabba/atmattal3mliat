@@ -107,8 +107,10 @@
       return false;
   }
 
+
   $('#btnPictures').on('click',function(){
-   printdiv('monthlyReport');
+    $('#btnPictures').remove();
+    printdiv('monthlyReport');
   })
 
 
