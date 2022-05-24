@@ -7,11 +7,42 @@
 
 
 
+ <div class="gallery mx-center text-center">
+  <img src="/media/monthlyReport/32-2021_eC4VdA9.jpg" width='300' hight='300'  alt="">
+</div>
 
 
 
 
+<script type="text/javascript">
 
+
+var galleryImage=$('.gallery').find('img').first();
+var images={{trail | js}}
+var i=0;
+setInterval(function() {
+
+    i = (i + 1) % images.length;
+
+
+    galleryImage.fadeOut(function() {
+      $(this).attr("src", images[i]);
+      $(this).fadeIn();
+    });
+
+
+  }, 2000);
+
+
+
+  $('#btnPictures').on('click',function(){
+    alert(images[0])
+    $('#btnPictures').remove();
+
+    printdiv('monthlyReport');
+  })
+
+</script>
 
 
 
