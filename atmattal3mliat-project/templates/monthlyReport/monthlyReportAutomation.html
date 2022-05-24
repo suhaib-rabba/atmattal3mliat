@@ -5,10 +5,53 @@
 
 
 
+<div class="gallery mx-center text-center">
+  <img src="/media/monthlyReport/32-2021_eC4VdA9.jpg" width='300' hight='300'  alt="">
+</div>
 
 
 
 
+<script type="text/javascript">
+
+  function printdiv(printdivname) {
+      var headstr = "<html><head><title>Booking Details</title></head><body>";
+      var footstr = "</body>";
+      var newstr = document.getElementById(printdivname).innerHTML;
+      var oldstr = document.body.innerHTML;
+      document.body.innerHTML = headstr+newstr+footstr;
+      window.print();
+      document.body.innerHTML = oldstr;
+      return false;
+  }
+
+
+var galleryImage=$('.gallery').find('img').first();
+var images={{src | js}}
+var i=0;
+setInterval(function() {
+
+    i = (i + 1) % images.length;
+
+
+    galleryImage.fadeOut(function() {
+      $(this).attr("src", images[i]);
+      $(this).fadeIn();
+    });
+
+
+  }, 2000);
+
+
+
+  $('#btnPictures').on('click',function(){
+    alert(images[0])
+    $('#btnPictures').remove();
+
+    printdiv('monthlyReport');
+  })
+
+</script>
 
 
 
