@@ -2,45 +2,84 @@
 {% load static %}
 {% block content %}
 {% load js %}
+<br>
+
+
+
+<div class=" container" width=500 higth=500>
+
+<h2 class='text-center  ' >انجازات مديرية اشغال مادبا لشهر ايار</h2>
+<br>
+<br>
+
+
+<h3 class='text-center text-success sector '></h3>
+<h4 class='text-center text-success department '></h4>
 
 
 
 
 
  <div class="gallery mx-center text-center">
-  <img src="/media/monthlyReport/32-2021_eC4VdA9.jpg" width='300' hight='300'  alt="">
+  <img src="#" width='300' hight='300'  alt="">
 </div>
+<br>
+<h5 class='text-center text-success work '></h5>
 
+
+
+<br>
+<br>
+
+<h4 class='text-center ' id='myname'>اعداد وتصميم : المهندس صهيب زهير خليل رباع</h4>
+</div>
 
 
 
 <script type="text/javascript">
 
+var images={{src | js}}
+var department={{department_list | js}}
+var sector={{sector_list| js}}
+var work={{work_list| js}}
+
 
 var galleryImage=$('.gallery').find('img').first();
-var images={{trail | js}}
+
 var i=0;
 setInterval(function() {
 
     i = (i + 1) % images.length;
 
-
+    console.log(i)
     galleryImage.fadeOut(function() {
-      $(this).attr("src", images[i]);
+      $(this).attr({"src": images[i],'width':500,'height':500});
       $(this).fadeIn();
+       $('.department').text(department[i])
+       $('.sector').text(sector[i])
+       $('.work').text(work[i])
+
+
     });
 
 
   }, 2000);
 
+var myname=$('#myname');
+  setInterval(function() {
+
+      myname.fadeOut(function() {
+        $(this).fadeIn();
+
+      });
 
 
-  $('#btnPictures').on('click',function(){
-    alert(images[0])
-    $('#btnPictures').remove();
+    }, 1500);
 
-    printdiv('monthlyReport');
-  })
+
+
+
+
 
 </script>
 
