@@ -15,4 +15,5 @@ urlpatterns = [
          name='tender_maintenance_url'),
     path('tender_maintenanceRender/', views. tender_maintenanceTables,
          name='tender_maintenanceRender')
+
          ]

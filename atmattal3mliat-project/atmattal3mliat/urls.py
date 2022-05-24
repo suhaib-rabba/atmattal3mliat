@@ -30,6 +30,7 @@ urlpatterns = [
     path('application/', include('apps.urls')),
     path('monthly_report/', views.monthly_report, name='reportInput'),
     path('monthly_reportRender/', views.monthly_reportRender, name='reportRender'),
+    path('monthly_reportAutomation/', views.monthly_reportAutomation, name='reportAutomation')
 
 
 

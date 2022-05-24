@@ -98,6 +98,17 @@
         </li>
         {% endif %}
 
+        {% if request.get_full_path == "/'monthly_reportAutomation/" %}
+
+        <li class="nav-item">
+          <a class="nav-link active   mx-1 " aria-current="page" href="{% url 'reportAutomation' %}"> االتقرير الشهري(عرض)</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link   mx-1 " aria-current="page" href="{% url 'reportAutomation' %}">االتقرير الشهري(عرض)</a>
+        </li>
+        {% endif %}
+
 
         {% if request.get_full_path == "/about/" %}
         <li class="nav-item ">
