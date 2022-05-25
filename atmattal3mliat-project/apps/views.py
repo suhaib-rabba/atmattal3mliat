@@ -260,7 +260,10 @@ def monthly_report(request):
 def monthly_reportRender(request):
     objects = monthlyReportModel.objects.all()
     objects = list(objects)
-    objects = sorted(objects, key=lambda x: x.code)
+
+    def length(x):
+        return len(x.department)
+    objects = sorted(objects, key=length)
 
     trail = []
     for object in objects:
