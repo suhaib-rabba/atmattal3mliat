@@ -276,7 +276,10 @@ def monthly_reportRender(request):
 def monthly_reportAutomation(request):
     objects = monthlyReportModel.objects.all()
     objects = list(objects)
-    objects = sorted(objects, key=lambda x: x.code)
+
+    def length(x):
+        return len(x.department)
+    objects = sorted(objects, key=length)
     src = []
     department_list = []
     sector_list = []
