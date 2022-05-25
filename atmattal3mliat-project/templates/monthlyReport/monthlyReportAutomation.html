@@ -59,10 +59,11 @@ setInterval(function() {
     console.log(i)
     galleryImage.fadeOut(function() {
       $(this).attr({"src": images[i],'width':500,'height':500});
+      $('.department').text(department[i])
+      $('.sector').text(sector[i])
+      $('.work').text(work[i])
+
       $(this).fadeIn();
-       $('.department').text(department[i])
-       $('.sector').text(sector[i])
-       $('.work').text(work[i])
 
 
     });
