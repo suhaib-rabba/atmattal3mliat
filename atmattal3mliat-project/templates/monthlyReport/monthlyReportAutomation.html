@@ -81,21 +81,17 @@ var i=0;
 //   }, 3000);
 
   setInterval(function() {
-
-      i = (i + 1) % images.length;
-
-      console.log(i)
-    $('.target').fadeOut(1000,function() {
     galleryImage.attr({"src": images[i],'width':450,'height':500});
-        // $(this).attr({"src": images[i]});
-        $('.department').text(department[i]);
-        $('.sector').text(sector[i]);
-        $('.work').text(work[i]);
-
-    // $(this).fadeIn();
+      i = (i + 1) % images.length;
 
 
    galleryImage.ready(function() {
+     $('.target').fadeOut(function() {
+
+         // $(this).attr({"src": images[i]});
+         $('.department').text(department[i]);
+         $('.sector').text(sector[i]);
+         $('.work').text(work[i]);
     $('.target').fadeIn();
 });
 
@@ -105,7 +101,7 @@ var i=0;
       },);
 
 
-    }, 3000);
+    }, 3500);
 
 
 
