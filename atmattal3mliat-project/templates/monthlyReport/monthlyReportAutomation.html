@@ -12,6 +12,8 @@
 <br>
 <br>
 
+<div class="target">
+
 
 <h3 class='text-center text-success sector '></h3>
 <h4 class='text-center text-success department '></h4>
@@ -27,6 +29,7 @@
 <br>
 <h5 class='text-center text-success work  '></h5>
 
+</div>
 
 
 <br>
@@ -55,38 +58,61 @@ var i=0;
 
 
 
-setInterval(function() {
-
-    i = (i + 1) % images.length;
-
-    console.log(i)
-    galleryImage.fadeOut(function() {
-      // $(this).attr({"src": images[i],'width':450,'height':500});
-      $(this).attr({"src": images[i]});
-  $(this).fadeIn();
-      $('.department').text(department[i]);
-      $('.sector').text(sector[i]);
-      $('.work').text(work[i]);
-
-
-
-
-    },);
-
-
-  }, 2500);
-
-
-// var myname=$('#myname');
-//   setInterval(function() {
+// setInterval(function() {
 //
-//       myname.fadeOut(function() {
-//         $(this).fadeIn();
+//     i = (i + 1) % images.length;
 //
-//       });
+//     console.log(i)
+//     galleryImage.fadeOut(function() {
+//       // $(this).attr({"src": images[i],'width':450,'height':500});
+//       $(this).attr({"src": images[i]});
+//   $(this).fadeIn();
+//       $('.department').text(department[i]);
+//       $('.sector').text(sector[i]);
+//       $('.work').text(work[i]);
 //
 //
-//     }, 1500);
+//
+//
+//     },);
+//
+//
+//   }, 3000);
+
+  setInterval(function() {
+
+      i = (i + 1) % images.length;
+
+      console.log(i)
+    $('.target').fadeOut(function() {
+        galleryImage.attr({"src": images[i],'width':450,'height':500});
+        // $(this).attr({"src": images[i]});
+        $('.department').text(department[i]);
+        $('.sector').text(sector[i]);
+        $('.work').text(work[i]);
+
+    $(this).fadeIn();
+
+
+
+
+      },);
+
+
+    }, 3000);
+
+
+
+var myname=$('#myname');
+  setInterval(function() {
+
+      myname.fadeOut(function() {
+        $(this).fadeIn();
+
+      });
+
+
+    }, 1500);
 
 
 
