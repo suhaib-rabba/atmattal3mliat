@@ -57,18 +57,18 @@ setInterval(function() {
     i = (i + 1) % images.length;
 
     console.log(i)
-    galleryImage.fadeOut(function() {
-      // $(this).attr({"src": images[i],'width':450,'height':500});
-      $(this).attr({"src": images[i]});
-
+    galleryImage.fadeOut(500,function() {
+      $(this).attr({"src": images[i],'width':450,'height':500});
+      // $(this).attr({"src": images[i]});
+  $(this).fadeIn(500);
       $('.department').text(department[i]);
       $('.sector').text(sector[i]);
       $('.work').text(work[i]);
 
-      $(this).fadeIn();
 
 
-    });
+
+    },);
 
 
   }, 3000);
