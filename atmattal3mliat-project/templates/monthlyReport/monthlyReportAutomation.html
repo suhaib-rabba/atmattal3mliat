@@ -83,25 +83,29 @@ var i=0;
   setInterval(function() {
     galleryImage.attr({"src": images[i],'width':450,'height':500});
       i = (i + 1) % images.length;
+        galleryImage.ready();
+
+        // Run code
 
 
-   galleryImage.ready(function() {
-     $('.target').fadeOut(function() {
+
+     $('.target').fadeOut(2000,function() {
 
          // $(this).attr({"src": images[i]});
          $('.department').text(department[i]);
          $('.sector').text(sector[i]);
          $('.work').text(work[i]);
-    $('.target').fadeIn();
+         $('.target').fadeIn(1000);
+
 });
 
 
 
 
-      },);
 
 
-    }, 3500);
+
+}, 4000);
 
 
 
