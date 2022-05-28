@@ -52,15 +52,19 @@ var work={{work_list| js}}
 var galleryImage=$('.gallery').find('img').first();
 
 var i=0;
+setTimeout(function(){
+
+
+
 setInterval(function() {
 
     i = (i + 1) % images.length;
 
     console.log(i)
-    galleryImage.fadeOut(500,function() {
+    galleryImage.fadeOut(1000,function() {
       $(this).attr({"src": images[i],'width':450,'height':500});
       // $(this).attr({"src": images[i]});
-  $(this).fadeIn(500);
+  $(this).fadeIn(1000);
       $('.department').text(department[i]);
       $('.sector').text(sector[i]);
       $('.work').text(work[i]);
@@ -71,7 +75,8 @@ setInterval(function() {
     },);
 
 
-  }, 3000);
+  }, 2500);}
+  , 1000); 
 
 // var myname=$('#myname');
 //   setInterval(function() {
