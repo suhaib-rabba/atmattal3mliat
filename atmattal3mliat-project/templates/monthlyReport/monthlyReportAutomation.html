@@ -11,9 +11,10 @@
 <h2 class='text-center  ' >انجازات مديرية اشغال مادبا لشهر ايار</h2>
 <br>
 <br>
+<div class="target">
 <h3 class='text-center text-success sector '></h3>
 <h4 class='text-center text-success department '></h4>
-<div class="target">
+
 
 
 
@@ -28,10 +29,10 @@
 </div>
 <br>
 
-</div>
+
 <h5 class='text-center text-success work  '></h5>
 
-
+</div>
 <br>
 <br>
 
@@ -59,56 +60,28 @@ var i=0;
 
 
 
-// setInterval(function() {
-//
-//     i = (i + 1) % images.length;
-//
-//     console.log(i)
-//     galleryImage.fadeOut(function() {
-//       // $(this).attr({"src": images[i],'width':450,'height':500});
-//       $(this).attr({"src": images[i]});
-//   $(this).fadeIn();
-//       $('.department').text(department[i]);
-//       $('.sector').text(sector[i]);
-//       $('.work').text(work[i]);
-//
-//
-//
-//
-//     },);
-//
-//
-//   }, 3000);
-
-  setInterval(function() {
-    galleryImage.attr({"src": images[i],'width':450,'height':500});
-      i = (i + 1) % images.length;
-        // galleryImage.ready();
-
-        // Run code
-
-        $( window ).load(function() {
-          // Run code
-          $('.target').fadeOut(2000,function() {
-
-              // $(this).attr({"src": images[i]});
-
-              $('.target').fadeIn(1000);
-
-     });
-     $('.department').text(department[i]);
-     $('.sector').text(sector[i]);
-     $('.work').text(work[i]);
-        });
+setInterval(function() {
 
 
 
+    galleryImage.fadeOut(function() {
+      galleryImage.attr({"src": images[i],'width':450,'height':500});
+      galleryImage.ready();
+
+      $('.department').text(department[i]);
+      $('.sector').text(sector[i]);
+      $('.work').text(work[i]);
+
+  $(this).fadeIn();
+
+    i = (i + 1) % images.length;
 
 
+    },);
 
 
+  }, 3000);
 
-}, 4000);
 
 
 
