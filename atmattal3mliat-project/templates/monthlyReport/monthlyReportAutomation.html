@@ -85,14 +85,17 @@ var i=0;
       i = (i + 1) % images.length;
 
       console.log(i)
-    $('.target').fadeOut(function() {
-        galleryImage.attr({"src": images[i],'width':450,'height':500});
+    $('.target').fadeOut(1000,function() {
+    galleryImage.attr({"src": images[i],'width':450,'height':500});
         // $(this).attr({"src": images[i]});
         $('.department').text(department[i]);
         $('.sector').text(sector[i]);
         $('.work').text(work[i]);
 
-    $(this).fadeIn();
+    // $(this).fadeIn();
+
+
+    $( this ).ready().fadeIn();
 
 
 
