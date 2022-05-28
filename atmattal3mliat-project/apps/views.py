@@ -260,7 +260,10 @@ def monthly_report(request):
 def monthly_reportRender(request):
     objects = monthlyReportModel.objects.all()
     objects = list(objects)
-    objects = sorted(objects, key=lambda x: x.code)
+
+    def length(x):
+        return len(x.department)
+    objects = sorted(objects, key=length)
 
     trail = []
     for object in objects:
@@ -269,19 +272,27 @@ def monthly_reportRender(request):
     context = {"objects": objects, 'trail': trail}
     return render(request, 'monthlyReport/monthlyReportRender.html', context)
 
+
 def monthly_reportAutomation(request):
     objects = monthlyReportModel.objects.all()
     objects = list(objects)
-    objects = sorted(objects, key=lambda x: x.code)
-    src=[]
-    department_list=[]
-    sector_list=[]
+
+    def length(x):
+        return len(x.department)
+    objects = sorted(objects, key=length)
+    src = []
+    department_list = []
+    sector_list = []
+    work_list = []
     for object in objects:
         src.append(object.photo.url)
     for object in objects:
         department_list.append(object.department)
     for object in objects:
         sector_list.append(object.sector)
-    context = {"src": src, 'department_list': department_list,"sector_list":sector_list}
+    for object in objects:
+        work_list.append(object.work)
+    context = {"src": src, 'department_list': department_list,
+               "sector_list": sector_list, 'work_list': work_list}
 
     return render(request, 'monthlyReport/monthlyReportAutomation.html', context)

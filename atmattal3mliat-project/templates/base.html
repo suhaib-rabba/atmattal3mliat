@@ -9,6 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
+
+    .myimage {
+      width: 100%;
+      max-width: 400px;
+      max-height: 400px;
+
+    }
+
     @media print{
     * {
         display:inline;
@@ -101,11 +109,11 @@
         {% if request.get_full_path == "/'monthly_reportAutomation/" %}
 
         <li class="nav-item">
-          <a class="nav-link active   mx-1 " aria-current="page" href="{% url 'reportAutomation' %}"> االتقرير الشهري(عرض)</a>
+          <a class="nav-link active   mx-1 " aria-current="page" href="{% url 'reportAutomation' %}">التقرير الشهري(عرض)</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link   mx-1 " aria-current="page" href="{% url 'reportAutomation' %}">االتقرير الشهري(عرض)</a>
+          <a class="nav-link   mx-1 " aria-current="page" href="{% url 'reportAutomation' %}">التقرير الشهري(عرض)</a>
         </li>
         {% endif %}
 
