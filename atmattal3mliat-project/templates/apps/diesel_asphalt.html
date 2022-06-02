@@ -5,6 +5,8 @@
 
 
 <h4 class='text-center text-success'>تطبيق تعاميم المحروقات</h4>
+<h6 class='text-center text-success'>(سولار , زيت وقود , الاسفلت)</h6>
+
 
 <br>
 
@@ -12,7 +14,7 @@
 
 
 <form class="    row  mx-5 "  action="{% url 'diesel_asphalt' %}"  method="post">{% csrf_token %}
-  <h5 class='text-centr lead my-2   aling-self-center text-center '>التاريخ الاساسي</h5>
+  <h5 class='text-centr lead my-2   aling-self-center text-center '>تاريخ التعميم</h5>
 <hr class='w-75 mx-auto '>
   <div class="col-7 text-center">
 
@@ -21,38 +23,19 @@
     <div class="col-5">
       <input class="form-control  mr-2" type="number" min=1 max=12 id="password" name='month1' placeholder="الشهر" required>  </div>
 
-      <h5 class='text-centr lead my-2  pb-2aling-self-center  text-center '>تاريخ التنفيذ</h5>
-      <hr class='w-75 mx-auto '>
-
-      <div class="col-7">
-        <input class="form-control  mr-2" type="number" min=2019 max=2022 id="username" name='year2' placeholder="السنة" required>  </div>
-        <div class="col-5">
-          <input class="form-control  mr-2" type="number" min=1 max=12  id="password" name='month2' placeholder="الشهر" required>  </div>
 
 
 
 
 
-          <h5 class=' lead mt-3   text-end '>صنف المحروقات</h5>
-<div   dir="rtl">
-          <div  class="form-check    pull-right">
 
-            <input class=" pull-right" type="radio" value="diesel" name='item' id="flexCheckDefault" required>
-            <label class="form-check-label lead  " for="flexCheckDefault">
-      ديزل</label>
-               </div>
-            <div class="form-check  mt-2">
-            <input class="pull-right" type="radio" value="butimen_oil" name='item' id="flexCheckChecked" checked required>
-            <label class="form-check-label lead" for="flexCheckChecked">
-بيتيومين و زيت وقود            </label>
-          </div>
-                  </div>
-    <button class="btn btn-success w-25 mx-auto" type="submit">ادخل</button>
+
+
+    <button class="btn btn-success w-25 mx-auto mt-3" type="submit">ادخل</button>
 </form>
 
-{% if test == "diesel" %}
 <br>
-
+{% if request.method == 'POST' %}
 <div   dir="rtl">
 
 
@@ -61,81 +44,30 @@
           <tr >
               <th>#</th>
               <td >الصنف</td>
-              <td>السعر وقت التاريخ الاساسي(فلس)</td>
-              <td>التعميم (التاريخ الاساسي)</td>
-              <td>السعر وقت التاريخ الفعلي (فلس)</td>
-              <td>التعميم (التاريخ الفعلي)</td>
-
-
-
-
-
-
-
-
+              <td>السعر بشهر ({{month}})</td>
+              <td>مصدر القيمة</td>
           </tr>
       </thead>
       <tbody>
         <tr class=''>
             <th  scope="row">1</th>
             <td >ديزل</td>
-            <td>{{costRequest_basic_diesel.0}}</td>
+            <td>{{costRequest_basic_diesel.0}} (فلس)</td>
             <td><a href={{tamem_base.url}} download="ديزل">pdf</a></td>
-            <td>{{costRequest_final_diesel.0}}</td>
-            <td><a href={{tamem_final.url}} download="ديزل">pdf</a></td>
-
 
           </tr>
-
-
-      </tbody>
-  </table>
-
-</div>
-
-{% elif  test == 'butimen_oil' %}
-<br>
-<div   dir="rtl">
-  <h1 class='text-center lead'>بيتيومين وزيت  وقود</h1>
-
-  <table class="table table-sm table-hover  container text-center ">
-      <thead>
-          <tr >
-              <th>#</th>
-              <td >الصنف</td>
-              <td>السعر وقت التاريخ الاساسي(طن/دينار)</td>
-              <td>التعميم (التاريخ الاساسي)</td>
-              <td>السعر وقت التاريخ الفعلي(طن/دينار)</td>
-              <td>التعميم (التاريخ الفعلي)</td>
-
-
-
-
-
-
-          </tr>
-      </thead>
-      <tbody>
           <tr class='  '>
-              <th  scope="row">1</th>
+              <th  scope="row">2</th>
               <td >بيتيومين</td>
-              <td>{{costRequest_basic_bitumen.0}}</td>
-              <td><a href={{tamem_base.url}} download="بيتيومين و فيول">pdf</a></td>
-              <td>{{costRequest_final_bitumen.0}}</td>
-              <td><a href={{tamem_final.url}} download="بيتيومين و فيول">pdf</a></td>
-
-
-
-
+              <td>{{costRequest_basic_bitumen.0}} (دينار/طن)</td>
+              <td><a href={{tamem_base_asphaltFuel.url}} download="بيتيومين و فيول">pdf</a></td>
 
           </tr>
           <tr class="">
-              <th   scope="row">2</th>
+              <th   scope="row">3</th>
               <td>زيت وقود</td>
-              <td>{{costRequest_basic_fuel.0}}</td>
-              <td>---</td>
-              <td>{{costRequest_final_fuel.0}}</td>
-              <td>---</td>
+              <td>{{costRequest_basic_fuel.0}}  (دينار/طن)</td>
+              <td><a href={{tamem_base_asphaltFuel.url}} download="بيتيومين و فيول">pdf</a></td>
 
 
           </tr>
@@ -143,8 +75,60 @@
 
       </tbody>
   </table>
+
+</div>
+
+{% endif %}
+
+<br>
+<br>
+
+<div   dir="rtl">
+ <h5 class= 'text-center text-success  '>تصميم وتدقيق</h5>
+
+ <table class="table table-sm table-hover  container text-center ">
+     <thead>
+         <tr >
+             <th>#</th>
+             <th>الاسم</th>
+             <th>المسمى</th>
+             <th>المساهمة</th>
+
+
+
+         </tr>
+     </thead>
+     <tbody>
+         <tr class='table-success'>
+             <th  scope="row">1</th>
+             <td >م.صهيب زهير خليل رباع</td>
+             <td>مهندس طرق</td>
+             <td>اعداد وتصميم</td>
+
+
+         </tr>
+         <tr class="table-secondary">
+             <th   scope="row">2</th>
+             <td>م.رحاب  حسن السعدوني</td>
+             <td>رئيس قسم المساحة والدراسات</td>
+             <td>مدقق اول</td>
+
+
+         </tr>
+
+         <tr class="table-secondary">
+             <th  scope="row">4</th>
+             <td>ايمان الهواوشة</td>
+             <td>محاسبة</td>
+             <td>مدقق ثاني</td>
+
+
+
+         </tr>
+
+     </tbody>
+ </table>
 </div>
 
 
-{% endif %}
 {% endblock %}

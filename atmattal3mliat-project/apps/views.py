@@ -50,67 +50,33 @@ def diesel_view(request):
         #الاساسي
        year1 = request.POST.get('year1')
        month1 = request.POST.get('month1')
-       #التنفيذ
-       year2 = request.POST.get('year2')
-       month2 = request.POST.get('month2')
-
-       test = request.POST.get('item')
-
+       # test = request.POST.get('item')
        object1 = Tamem(year1, month1)
-       object2 = Tamem(year2, month2)
 
-       if test == "diesel":
-           costRequest_basic_diesel = object1.diesel()
-           costRequest_final_diesel = object2.diesel()
-           diesel_tamem = Combustibles.objects.get(id=1)
-           # tamem_base = tamem_diesel_year(year1, diesel_tamem)
-           # tamem_final = tamem_diesel_year(year2, diesel_tamem)
-          #
-           call_base = "tamem_"+str(year1)
-           call_final = "tamem_"+str(year2)
-           tamem_base = getattr(diesel_tamem, call_base)
-           tamem_final = getattr(diesel_tamem, call_final)
-        #   tamem_base = diesel_tamem.tamem_2019
-          # tamem_final = diesel_tamem.tamem_2020
+       costRequest_basic_diesel = object1.diesel()
+       diesel_tamem = Combustibles.objects.get(id=1)
 
-           context = {"object": object,
-                      "costRequest_basic_diesel": costRequest_basic_diesel,
-                      "costRequest_final_diesel":  costRequest_final_diesel,
-                      "test": test,
-                      "tamem_base": tamem_base,
-                      "tamem_final": tamem_final
-                      }
-           return render(request, "apps/diesel_asphalt.html", context)
+       call_base = "tamem_"+str(year1)
+       tamem_base = getattr(diesel_tamem, call_base)
 
-       else:
-           costRequest_basic_bitumen = object1.bitumen()
-           costRequest_final_bitumen = object2.bitumen()
-           costRequest_basic_fuel = object1.fuel()
-           costRequest_final_fuel = object2.fuel
-           butimen_oil_tamem = Combustibles.objects.get(title="butiment_fuel")
-           call_base = "tamem_"+str(year1)
-           call_final = "tamem_"+str(year2)
-           tamem_base = getattr(butimen_oil_tamem, call_base)
-           tamem_final = getattr(butimen_oil_tamem, call_final)
+       costRequest_basic_bitumen = object1.bitumen()
+       costRequest_basic_fuel = object1.fuel()
+       butimen_oil_tamem = Combustibles.objects.get(title="butiment_fuel")
+       call_base = "tamem_"+str(year1)
+       tamem_base_asphaltFuel = getattr(butimen_oil_tamem, call_base)
 
-           context = {"object": object,
-                      "costRequest_basic_bitumen": costRequest_basic_bitumen,
-                      "costRequest_final_bitumen":  costRequest_final_bitumen,
-                      "costRequest_basic_fuel": costRequest_basic_fuel,
-                      "costRequest_final_fuel": costRequest_final_fuel,
-                      "test": test,
-                      "tamem_base": tamem_base,
-                      "tamem_final": tamem_final
-                      }
-           return render(request, "apps/diesel_asphalt.html", context)
+       context = {
+                  "costRequest_basic_diesel": costRequest_basic_diesel,
+                  "tamem_base": tamem_base,
+                  "costRequest_basic_bitumen": costRequest_basic_bitumen,
+                  "costRequest_basic_fuel": costRequest_basic_fuel,
+                  "tamem_base_asphaltFuel": tamem_base_asphaltFuel,
+                  "month": month1, }
+       return render(request, "apps/diesel_asphalt.html", context)
 
     else:
         context = {}
         return render(request, "apps/diesel_asphalt.html", context)
-
-        return render(request, "apps/diesel_asphalt.html", {})
-
-#note
 
 
 def tender_study_view(request):
