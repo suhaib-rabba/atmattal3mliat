@@ -246,6 +246,7 @@ def monthly_reportAutomation(request):
     def length(x):
         return len(x.department)
     objects = sorted(objects, key=length)
+    objects=list(filter(lambda x: x.month ==  5, objects))
     src = []
     department_list = []
     sector_list = []

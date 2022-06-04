@@ -18,6 +18,8 @@
 <div class="row container text-center justify-content-center mx-auto" style="display:block" >
 
 {% for object in objects %}
+{% if object.month == 5 %}
+
 
 <div class="col-md-6 my-3 mx-auto" id="{{object.department}}" style="display:block" >
 <!-- style="width: 18rem;hight:18rem; -->
@@ -74,7 +76,7 @@
 
 
 
-
+{% endif %}
 {% endfor %}
 </div>
 
