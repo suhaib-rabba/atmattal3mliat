@@ -10,7 +10,7 @@
 <div id="monthlyReport">
 
 
-<h4 class='text-center  text-success'>انجازات مديرية اشغال مادبا لشهر ايار</h4>
+<h4 class='text-center  text-success'>انجازات مديرية اشغال مادبا لشهر حزيران</h4>
 
 <br>
 <br>
@@ -18,7 +18,6 @@
 <div class="row container text-center justify-content-center mx-auto" style="display:block" >
 
 {% for object in objects %}
-{% if object.month == 5 %}
 
 
 <div class="col-md-6 my-3 mx-auto" id="{{object.department}}" style="display:block" >
@@ -76,7 +75,6 @@
 
 
 
-{% endif %}
 {% endfor %}
 </div>
 
