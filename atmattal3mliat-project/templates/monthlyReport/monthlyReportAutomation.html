@@ -57,7 +57,7 @@ var work={{work_list| js}}
 var galleryImage=$('.gallery').find('img').first();
 
 var i=0;
-
+images.ready()
 
 
 setInterval(function() {
@@ -65,7 +65,7 @@ setInterval(function() {
 
 
     galleryImage.fadeOut(function() {
-      galleryImage.attr({"src": images[i],'width':450,'height':500});
+      galleryImage.attr({"src": images[i],'width':500,'height':550});
       galleryImage.ready();
 
       $('.department').text(department[i]);
@@ -80,7 +80,7 @@ setInterval(function() {
     },);
 
 
-  }, 4500);
+  }, 4000);
 
 
 
