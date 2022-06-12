@@ -8,9 +8,18 @@
 <h4 class='text-center  text-success '>تطبيق حساب فرق التواريخ</h4>
 <br>
 <form  class='text-center'   action=""  method="post"> {% csrf_token %}
-
+<div   dir="rtl">
 <div class="row">
 
+
+  <div class=" col-sm-6">
+    <label for=""><span class='lead '>امر المباشرة</span>
+
+      <br>
+    <input class='year mt-1' type="number" min='2019' max='2022' name="year1" placeholder="السنة" required>
+    <input  class='month' type="number"  min='1' max='12' name="month1"placeholder="الشهر" required>
+    <input class='day' type="number" min='1' max='31' name="day1" placeholder="اليوم" required>
+    </div>
 
 <div class="col-sm-6">
   <label  for=""><span class='lead '>تاريخ الانهاء الفعلي</span>
@@ -22,30 +31,24 @@
   </label>
   </div>
 
-<div class=" col-sm-6">
-  <label for=""><span class='lead '>امر المباشرة</span>
-
-    <br>
-  <input class='year mt-1' type="number" min='2019' max='2022' name="year1" placeholder="السنة" required>
-  <input  class='month' type="number"  min='1' max='12' name="month1"placeholder="الشهر" required>
-  <input class='day' type="number" min='1' max='31' name="day1" placeholder="اليوم" required>
-  </div>
+</div>
 
 </div>
+
 <br>
 <br>
 
-<div class=" row container text-center mx-auto">
+<div class=" row container text-center mx-auto"   dir="rtl">
 
+<input type="number"  class='extend col-sm-3  mx-1' name='tenderPeriod'  min='0' placeholder="مدة العطاء"  required>
 
-  <input type="number" class='extend col-sm-5 mx-1' name='periodSemster'  min='0' placeholder=" تمديد الصيف والشتاء"   >
 
 
 
 <input type="number" class='extend col-sm-3  mx-1  ' name='periodOther'   min='0' placeholder="تمديد اللجنة"  >
 
+  <input type="number" class='extend col-sm-5 mx-1' name='periodSemster'  min='0' placeholder=" تمديد الصيف والشتاء"   >
 
-<input type="number"  class='extend col-sm-3  mx-1' name='tenderPeriod'  min='0' placeholder="مدة العطاء"  required>
 
 </div>
 <br>
@@ -58,7 +61,7 @@
   <br>
     </form>
     <br>
-
+{% if request.method == 'POST' %}
     <table class="table table-sm table-hover  container text-center " dir="rtl">
 
 
@@ -91,12 +94,12 @@
 
 
 
-
 </tr>
 
 
-
-
   </tbody>
+  </table>
+
+  {% endif %}
 
 {% endblock %}
