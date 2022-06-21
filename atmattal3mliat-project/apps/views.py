@@ -229,7 +229,7 @@ def monthly_reportRender(request):
 
     def length(x):
         return len(x.department)
-    objects = sorted(objects, key=length)
+    objects = sorted(objects, lambda x: x.code)
     objects = list(filter(lambda x: x.month == 6, objects))
 
     trail = []
