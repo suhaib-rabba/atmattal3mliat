@@ -15,7 +15,9 @@ from . models import Date_app
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import monthlyReportModel
+from .models import QuestionnaireModel
 import operator
+
 #--------------------------
 
 
@@ -264,3 +266,25 @@ def monthly_reportAutomation(request):
                "sector_list": sector_list, 'work_list': work_list}
 
     return render(request, 'monthlyReport/monthlyReportAutomation.html', context)
+
+
+def questionnaire_view(request):
+        if request.method == "POST":
+            #--------------------------------
+            #---------------------------------
+            model =QuestionnaireModel()
+            model.sector = request.POST.get('office')
+            model.department = request.POST.get('department')
+            model.date_work = date_work
+            doc = request.FILES
+            model.area = request.POST.get('area')
+            model.work = request.POST.get('workDescription')
+
+            model.save()
+            responed = "تم الادخال بنجاح"
+            context = {'success': responed}
+            return render(request, 'general/questionnaire.html', context)
+
+        else:
+            context = {}
+            return render(request, 'general/questionnaire.html', context)
