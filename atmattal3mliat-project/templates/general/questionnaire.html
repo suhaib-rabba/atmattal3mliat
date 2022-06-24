@@ -15,7 +15,7 @@
 
 
   <div class="input-group mt-3 text-center  ">
-    <select class="form-select monthlyReport" id="inputGroupSelect01" name='department' required>
+    <select class="form-select monthlyReport" id="inputGroupSelect01" name='sector' required>
       <option selected class='text-"text-center'>اختر</option>
       <option class='text-"text-center'>جهة حكومية</option>
       <option class='text-"text-center'>جهة خاصة(مقاول,شركة استشارية)</option>
@@ -26,14 +26,14 @@
   </div>
 
   <div class="input-group mt-3 text-center  ">
-    <input name='area' type="text" class="form-control" placeholder=" وزارة الاشغال , بلدية , امانة  " aria-label="Username"  aria-describedby="basic-addon1" required>
+    <input name='institution' type="text" class="form-control" placeholder=" وزارة الاشغال , بلدية , امانة  " aria-label="Username"  aria-describedby="basic-addon1" required>
     <span class="input-group-text" id="basic-addon1">اسم المؤسسة</span>
 
   </div>
 
 
   <div class="input-group mt-3 text-center  ">
-    <input name='area' type="text" class="form-control" placeholder=" " aria-label="Username" aria-describedby="basic-addon1" required>
+    <input name='user' type="text" class="form-control" placeholder=" " aria-label="Username" aria-describedby="basic-addon1" required>
     <span class="input-group-text" id="basic-addon1">اسم المستخدم</span>
 
   </div>
@@ -42,7 +42,7 @@
 
 
     <div class="input-group mt-4 text-center  ">
-      <select class="form-select monthlyReport" id="inputGroupSelect01" name='department' required>
+      <select class="form-select monthlyReport" id="inputGroupSelect01" name='application' required>
         <option selected class='text-"text-center'>اختر</option>
         <option valeu="تطبيق تعاميم المحروقات" >تطبيق تعاميم المحروقات</option>
         <option valeu="تطبيق تحضير قيم العطاء" >تطبيق تحضير قيم العطاء</option>
@@ -54,40 +54,50 @@
 
     </div>
 
-<div class="row container"  dir="rtl">
+<div class="row container mx-auto"  dir="rtl">
 
 <div class="col-sm-6">
 
 
-    <select class="form-select mt-3 " multiple aria-label="multiple select example">
+    <select class="form-select mt-3 " name="speed" multiple aria-label="multiple select example">
       <option selected>هل استخدام التطبيق  اختصر الجهد والوقت</option>
       <option value="1">نعم</option>
       <option value="2">لا</option>
       <option value="3">نفس الوقت تقريباً</option>
     </select>
 </div>
-<div class="col-sm-6">
+<div class="col-sm-6  ">
 
-    <select class="form-select mt-3 col-sm-6" multiple aria-label="multiple select example">
+    <select class="form-select mt-3 col-sm-6" multiple aria-label="multiple select example" name="difficulty">
   <option selected>هل استخدام التطبيق سهل</option>
   <option value="1">نعم</option>
   <option value="2">لا</option>
 </select>
 </div>
 
-</div>
 
 
 
-<select class="form-select mt-3  text-center w-75 mx-auto" multiple aria-label="multiple select example">
+
+<select class="form-select mt-3  text-center w-75 mx-auto" multiple aria-label="multiple select example" name='usage'>
 <option selected>هل بقيت تستخدم التطبيق بدل الطريقة القديمة بعد استخدامه</option>
 <option value="1">نعم</option>
 <option value="2">لا</option>
 </select>
 
 
-  <input class="btn btn-success mx-auto   w-50 mt-5 " id='submitFirst' type='submit' value='ادخل القيم' >
+<div class="  mt-2 mx-3" >
+  <textarea  rows="4"  class='form-control' placeholder="ما الامور التي يمكن اضافتها للتطبيق لتحسينه " name='improvment' required></textarea>
+</div>
 
+</div>
+<br>
+
+
+
+
+    <input class="btn btn-success mx-auto   w-50 mt-3 mx-auto " id='submitFirst' type='submit' value='ادخل القيم' >
+</div>
 </form>
 
 

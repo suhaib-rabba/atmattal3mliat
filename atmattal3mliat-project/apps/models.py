@@ -112,14 +112,16 @@ class monthlyReportModel(models.Model):
 
 class QuestionnaireModel(models.Model):
     sector = models.CharField(max_length=255)
-    name = models.CharField(max_length=255)
+    institution=models.CharField(max_length=255)
+    user = models.CharField(max_length=255)
+    application= models.CharField(max_length=255)
     date_sumbmittion = models.DateField(
              default=datetime(2022, 11, 4, 0, 5, 23))
-    speed= models.CharField(max_length=255)
+    speed=models.CharField(max_length=255)
     difficulty=models.CharField(max_length=255)
-    assessment = models.IntegerField()
-    note=models.CharField(max_length=500)
+    usage = models.CharField(max_length=255)
+    improvment=models.CharField(max_length=500)
 
 
     def __str__(self):
-        return self.name+' ('+str(self.sector )+")"
+        return self.user+' ('+str(self.sector )+")"
