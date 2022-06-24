@@ -20,12 +20,16 @@
       <option class='text-"text-center'>جهة حكومية</option>
       <option class='text-"text-center'>جهة خاصة(مقاول,شركة استشارية)</option>
 
-
     </select>
     <label class="input-group-text" for="inputGroupSelect01">الجهة</label>
 
   </div>
 
+  <div class="input-group mt-3 text-center  ">
+    <input name='area' type="text" class="form-control" placeholder=" وزارة الاشغال , بلدية , امانة  " aria-label="Username"  aria-describedby="basic-addon1" required>
+    <span class="input-group-text" id="basic-addon1">اسم المؤسسة</span>
+
+  </div>
 
 
   <div class="input-group mt-3 text-center  ">
@@ -37,7 +41,7 @@
 
 
 
-    <div class="input-group mt-3 text-center  ">
+    <div class="input-group mt-4 text-center  ">
       <select class="form-select monthlyReport" id="inputGroupSelect01" name='department' required>
         <option selected class='text-"text-center'>اختر</option>
         <option valeu="تطبيق تعاميم المحروقات" >تطبيق تعاميم المحروقات</option>
@@ -45,50 +49,44 @@
         <option valeu="تطبيق حساب فرق التواريخ" >تطبيق حساب فرق التواريخ</option>
         <option valeu="العطاءات ضمن كفالة الصيانة في مديرية اشغال مأدبا" >العطاءات ضمن كفالة الصيانة في مديرية اشغال مأدبا</option>
 
-
-
-
       </select>
       <label class="input-group-text" for="inputGroupSelect01">التطبيق</label>
 
     </div>
 
+<div class="row container"  dir="rtl">
+
+<div class="col-sm-6">
 
 
-
-  <div class="input-group mt-2">
-    <input name='area' type="text" class="form-control" placeholder=",,,,مادبا,فيصلية,جرينة,الفيحاء" aria-label="Username" aria-describedby="basic-addon1" required>
-    <span class="input-group-text" id="basic-addon1">منطقة العمل</span>
-
-  </div>
-
-  <div class="input-group mt-2">
-
-    <input  class='form-control' type="number" min='2019' max='2022' value=2022 name="year1" placeholder="السنة" required>
-    <input    class='form-control' type="number"  min='1' max='12' value=6 name="month1" placeholder="الشهر" required>
-    <input class=' form-control' type="number" min='1' max='31' name="day1" placeholder="اليوم" required>
-  <span class="input-group-text">تاريخ تنفيذ الاعمال</span>
-  </div>
-
-  <div class="input-group mb-3 mt-2">
-  <input type="file"  class="form-control" id="id_docfile" name='docfile' required>
-  <label class="input-group-text" for="inputGroupFile01">تحميل الصورة</label>
-
+    <select class="form-select mt-3 " multiple aria-label="multiple select example">
+      <option selected>هل استخدام التطبيق  اختصر الجهد والوقت</option>
+      <option value="1">نعم</option>
+      <option value="2">لا</option>
+      <option value="3">نفس الوقت تقريباً</option>
+    </select>
 </div>
+<div class="col-sm-6">
 
-
-<div class=" col-sm-12 mt-2 mx-3" >
-  <textarea  rows="4"  class='form-control' placeholder="وصف العمل المنجز" name='workDescription' required></textarea>
+    <select class="form-select mt-3 col-sm-6" multiple aria-label="multiple select example">
+  <option selected>هل استخدام التطبيق سهل</option>
+  <option value="1">نعم</option>
+  <option value="2">لا</option>
+</select>
 </div>
 
 </div>
-<br>
 
 
 
+<select class="form-select mt-3  text-center w-75 mx-auto" multiple aria-label="multiple select example">
+<option selected>هل بقيت تستخدم التطبيق بدل الطريقة القديمة بعد استخدامه</option>
+<option value="1">نعم</option>
+<option value="2">لا</option>
+</select>
 
 
-  <input class="btn btn-success mx-auto  w-25 mt-4 " id='submitFirst' type='submit' value='ادخل القيم' >
+  <input class="btn btn-success mx-auto   w-50 mt-5 " id='submitFirst' type='submit' value='ادخل القيم' >
 
 </form>
 
