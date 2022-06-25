@@ -94,7 +94,15 @@
         </li>
         {% endif %}
 
-
+        {% if request.get_full_path == "/questionnaire/" %}
+        <li class="nav-item ">
+          <a class="nav-link  active   mx-1 " href="{% url 'questionnaireUrl' %}">الاستبيان </a>
+        </li>
+        {% else %}
+        <li class="nav-item ">
+        <a class="nav-link    mx-1 " href="{% url 'questionnaireUrl' %}">الاستبيان </a>
+        </li>
+        {% endif %}
         {% if request.get_full_path == "/monthly_report/" %}
 
         <li class="nav-item">
@@ -127,6 +135,8 @@
   <a class="nav-link    mx-1 " href="{% url 'about' %}"> حول الموقع </a>
 </li>
 {% endif %}
+
+
 
 
 
