@@ -112,15 +112,15 @@ class monthlyReportModel(models.Model):
 
 class QuestionnaireModel(models.Model):
     sector = models.CharField(max_length=255)
-    institution=models.CharField(max_length=255)
-    user = models.CharField(max_length=255)
-    application= models.CharField(max_length=255)
+    institution=models.CharField(max_length=255,default='وزارة الاشغال')
+    user = models.CharField(max_length=255,default='وزارة الاشغال')
+    application= models.CharField(max_length=255,default='وزارة الاشغال')
     date_sumbmittion = models.DateField(
              default=datetime(2022, 11, 4, 0, 5, 23))
-    speed=models.CharField(max_length=255)
-    difficulty=models.CharField(max_length=255)
-    usage = models.CharField(max_length=255)
-    improvment=models.CharField(max_length=500)
+    speed=models.CharField(max_length=255,default='وزارة الاشغال')
+    difficulty=models.CharField(max_length=255,default='وزارة الاشغال')
+    usage = models.CharField(max_length=255,default='هل تستخدم التطبيق')
+    improvment=models.CharField(max_length=500,default='وزارة الاشغال')
 
 
     def __str__(self):

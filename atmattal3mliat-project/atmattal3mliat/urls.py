@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps import views
-from apps.views import questionnaire_view
 from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
@@ -32,7 +31,7 @@ urlpatterns = [
     path('monthly_report/', views.monthly_report, name='reportInput'),
     path('monthly_reportRender/', views.monthly_reportRender, name='reportRender'),
     path('monthly_reportAutomation/', views.monthly_reportAutomation, name='reportAutomation'),
-    path('questionnaire/',questionnaire_view, name='questionnaireUrl')
+    path('questionnaire/',views.questionnaire_view, name='questionnaireUrl')
 
 
          ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

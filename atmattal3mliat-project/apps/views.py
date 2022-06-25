@@ -273,12 +273,16 @@ def questionnaire_view(request):
             #--------------------------------
             #---------------------------------
             model =QuestionnaireModel()
-            model.sector = request.POST.get('office')
-            model.department = request.POST.get('department')
-            model.date_work = date_work
-            doc = request.FILES
-            model.area = request.POST.get('area')
-            model.work = request.POST.get('workDescription')
+
+            model.sector =request.POST.get('sector')
+            model.institution=request.POST.get('institution')
+            model.user = request.POST.get('user')
+            model.application= request.POST.get('application')
+            model.date_sumbmittion =datetime.datetime.now()
+            model.speed=request.POST.get('speed')
+            model.difficulty=request.POST.get('difficulty')
+            model.usage = request.POST.get('usage')
+            model.improvment=request.POST.get('improvment')
 
             model.save()
             responed = "تم الادخال بنجاح"
