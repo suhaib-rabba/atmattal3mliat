@@ -13,7 +13,6 @@
 <div class="row container justifiy-content-center">
 
 
-
   <div class="input-group mt-3 text-center  ">
     <select class="form-select monthlyReport" id="inputGroupSelect01" name='sector' required>
       <option selected class='text-"text-center'>اختر</option>
@@ -24,6 +23,7 @@
     <label class="input-group-text" for="inputGroupSelect01">الجهة</label>
 
   </div>
+
 
   <div class="input-group mt-3 text-center  ">
     <input name='institution' type="text" class="form-control" placeholder=" وزارة الاشغال , بلدية , امانة  " aria-label="Username"  aria-describedby="basic-addon1" required>
@@ -54,39 +54,57 @@
 
     </div>
 
-<div class="row container mx-auto"  dir="rtl">
-
-<div class="col-sm-6">
+<div class="row  mx-auto"  >
 
 
-    <select class="form-select mt-3 " name="speed" multiple aria-label="multiple select example">
-      <option selected>هل استخدام التطبيق  اختصر الجهد والوقت</option>
+
+  <div class="input-group mt-3 text-center  col-sm-6 ">
+    <select class="form-select monthlyReport" id="inputGroupSelect01" name='speed' required>
+      <option selected class='text-"text-center'>اختر</option>
       <option value="نعم">نعم</option>
       <option value="لا">لا</option>
       <option value="نفس الوقت تقريباً">نفس الوقت تقريباً</option>
+
     </select>
-</div>
-<div class="col-sm-6  ">
+    <label class="input-group-text" for="inputGroupSelect01">هل استخدام التطبيق  اختصر الجهد والوقت</label>
 
-    <select class="form-select mt-3 col-sm-6" multiple aria-label="multiple select example" name="difficulty">
-  <option selected>هل استخدام التطبيق سهل</option>
-  <option value="نعم">نعم</option>
-  <option value="لا">لا</option>
-</select>
-</div>
+  </div>
 
 
 
 
+  <div class="input-group mt-3 text-center  col-sm-6 ">
+    <select class="form-select monthlyReport" id="inputGroupSelect01" name='difficulty' required>
+      <option selected class='text-"text-center'>اختر</option>
+      <option value="نعم">نعم</option>
+      <option value="لا">لا</option>
 
-<select class="form-select mt-3  text-center w-75 mx-auto" multiple aria-label="multiple select example" name='usage'>
-<option selected>هل ستستخدم التطبيق لاحقاً بدل الطريقة القديمة</option>
-<option value="نعم">نعم</option>
-<option value="لا">لا</option>
-</select>
+    </select>
+    <label class="input-group-text" for="inputGroupSelect01">هل استخدام التطبيق سهل</label>
+
+  </div>
 
 
-<div class="  mt-2 mx-3" >
+
+
+  <div class="input-group mt-3 text-center  col-sm-6 ">
+    <select class="form-select monthlyReport" id="inputGroupSelect01" name='usage' required>
+      <option selected class='text-"text-center'>اختر</option>
+      <option value="نعم">نعم</option>
+      <option value="لا">لا</option>
+
+    </select>
+    <label class="input-group-text" for="inputGroupSelect01">هل ستستخدم التطبيق لاحقاً بدل الطريقة القديمة</label>
+
+  </div>
+
+
+
+
+
+
+
+<div class="  mt-2 mx-3" dir="rtl" >
   <textarea  rows="4"  class='form-control' placeholder="ما الامور التي يمكن اضافتها للتطبيق لتحسينه " name='improvment' required></textarea>
 </div>
 
